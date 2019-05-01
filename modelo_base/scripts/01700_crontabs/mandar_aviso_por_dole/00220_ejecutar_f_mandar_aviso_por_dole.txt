@@ -1,0 +1,120 @@
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_1.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-01-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_2.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-02-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_3.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-03-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento acta_const_soc.docx de tipo CONTRATO DE ARRIENDO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_4.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_5.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_6.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_7.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_8.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_9.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_10.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_11.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_12.txT de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_13.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_14.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_15.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_16.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_17.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_18.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento prueba_19.txt de tipo CONTRATO DE ARRIENDO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento const_soc.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento act_dir.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento ses_dir.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017
+NOTICE:  XXXXX
+SUGERENCIA:  
+YYYYY_10Aviso documento legal
+YYYYY_20GERARDO.PALMA.ASTE@GMAIL.COM
+YYYYY_30El documento cont_arr.txt de tipo CONTRATO DE ARRIENDO, tenia fecha de aviso 01-04-2017

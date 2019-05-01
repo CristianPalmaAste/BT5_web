@@ -1,0 +1,15 @@
+SET
+CREATE FUNCTION
+ tmp_datos_de_prueba 
+---------------------
+ S
+(1 fila)
+
+DROP FUNCTION
+CREATE FUNCTION
+ tmp_usuario_acc_total 
+-----------------------
+ S
+(1 fila)
+
+DROP FUNCTION

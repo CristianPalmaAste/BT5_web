@@ -1,0 +1,21 @@
+CREATE FUNCTION
+ f_limpia 
+----------
+ hola
+(1 fila)
+
+ f_limpia 
+----------
+ CHAO
+(1 fila)
+
+ f_limpia 
+----------
+ aeiou
+(1 fila)
+
+ f_limpia 
+----------
+ AEIOU
+(1 fila)
+

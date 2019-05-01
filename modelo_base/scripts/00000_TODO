@@ -1,0 +1,184 @@
+#!/bin/bash
+
+. ./.config_recreacion_ambiente
+
+clear
+
+echo
+echo "Instancia y usuario:"
+echo "  DBNAME     = $DBNAME"
+echo "  USUARIO_DB = $USUARIO_DB"
+echo
+
+echo "Creando lenguaje"
+psql -d $DBNAME -U $USUARIO_DB < 00050_language.sql > 00060_language.txt 2> 00070_language.txt
+
+./00100_drop_table.sh
+
+echo "Borrando tablas"
+psql -d $DBNAME -U $USUARIO_DB < 00110_drop_table.sql > 00120_drop_table.txt
+
+echo "Creando tablas"
+psql -d $DBNAME -U $USUARIO_DB < 00200_tablas.sql > 00210_tablas.txt
+
+./00300_vistas_cortas.sh
+
+echo "Creando vistas cortas"
+psql -d $DBNAME -U $USUARIO_DB < 00310_vistas_cortas.sql > 00320_vistas_cortas.txt
+
+echo "Poniendo secuencias al dia"
+./00700_secuencias.sh
+
+cd 01500_funciones_almacenadas
+
+echo "Creando funciones"
+
+echo "  00100_f_valida_usuario"
+psql -d $DBNAME -U $USUARIO_DB < 00100_f_valida_usuario.sql > 00110_f_valida_usuario.txt
+
+echo "  00200_f_crear_datos_holding"
+psql -d $DBNAME -U $USUARIO_DB < 00200_f_crear_datos_holding.sql > 00210_f_crear_datos_holding.txt
+
+echo "  00300_f_dv_rut_cl"
+psql -d $DBNAME -U $USUARIO_DB < 00300_f_dv_rut_cl.sql > 00310_f_dv_rut_cl.txt
+
+echo "  00400_f_validar_dv_pers"
+psql -d $DBNAME -U $USUARIO_DB < 00400_f_validar_dv_pers.sql > 00410_f_validar_dv_pers.txt
+
+echo "  00500_f_mandar_aviso_por_dole"
+psql -d $DBNAME -U $USUARIO_DB < 00500_f_mandar_aviso_por_dole.sql > 00510_f_mandar_aviso_por_dole.txt
+
+echo "  00600_f_limpia"
+psql -d $DBNAME -U $USUARIO_DB < 00600_f_limpia.sql > 00610_f_limpia.txt
+
+echo "  00700_f_validar_cove"
+psql -d $DBNAME -U $USUARIO_DB < 00700_f_validar_cove.sql > 00710_f_validar_cove.txt
+
+echo "  00800_f_validar_nove"
+psql -d $DBNAME -U $USUARIO_DB < 00800_f_validar_nove.sql > 00810_f_validar_nove.txt
+
+echo "  00900_f_validar_vent"
+psql -d $DBNAME -U $USUARIO_DB < 00900_f_validar_vent.sql > 00910_f_validar_vent.txt
+
+echo "  01000_f_copiar_cove_a_nove"
+psql -d $DBNAME -U $USUARIO_DB < 01000_f_copiar_cove_a_nove.sql > 01010_f_copiar_cove_a_nove.txt
+
+echo "  01100_f_copiar_nove_a_vent"
+psql -d $DBNAME -U $USUARIO_DB < 01100_f_copiar_nove_a_vent.sql > 01110_f_copiar_nove_a_vent.txt
+
+echo "  01200_f_validar_cove_ins"
+psql -d $DBNAME -U $USUARIO_DB < 01200_f_validar_cove_ins.sql > 01210_f_validar_cove_ins.txt
+
+echo "  01300_f_validar_nove_ins"
+psql -d $DBNAME -U $USUARIO_DB < 01300_f_validar_nove_ins.sql > 01310_f_validar_nove_ins.txt
+
+echo "  01400_f_validar_vent_ins"
+psql -d $DBNAME -U $USUARIO_DB < 01400_f_validar_vent_ins.sql > 01410_f_validar_vent_ins.txt
+
+echo "  01500_f_datos_linea_vta"
+psql -d $DBNAME -U $USUARIO_DB < 01500_f_datos_linea_vta.sql > 01510_f_datos_linea_vta.txt
+
+echo "  01600_f_stock_producto"
+psql -d $DBNAME -U $USUARIO_DB < 01600_f_stock_producto.sql > 01610_f_stock_producto.txt
+
+echo "  01700_f_completar_rubro_empresa"
+psql -d $DBNAME -U $USUARIO_DB < 01700_f_completar_rubro_empresa.sql > 01710_f_completar_rubro_empresa.txt
+
+echo "  01800_f_crear_datos_empresa"
+psql -d $DBNAME -U $USUARIO_DB < 01800_f_crear_datos_empresa.sql > 01810_f_crear_datos_empresa.txt
+
+echo "  01900_f_datos_producto"
+psql -d $DBNAME -U $USUARIO_DB < 01900_f_datos_producto.sql > 01910_f_datos_producto.txt
+
+echo "  02000_f_registrar_precio_bitacora"
+psql -d $DBNAME -U $USUARIO_DB < 02000_f_registrar_precio_bitacora.sql > 02010_f_registrar_precio_bitacora.txt
+
+echo "  02100_f_rebajar_stock"
+psql -d $DBNAME -U $USUARIO_DB < 02100_f_rebajar_stock.sql > 02110_f_rebajar_stock.txt
+
+cd ..
+
+cd 01600_triggers
+
+echo "Creando triggers"
+
+echo "  00100_trg_after_ins_grem"
+psql -d $DBNAME -U $USUARIO_DB < 00100_trg_after_ins_grem.sql > 00110_trg_after_ins_grem.txt
+
+echo "  00200_trg_before_ins_upd_pers"
+psql -d $DBNAME -U $USUARIO_DB < 00200_trg_before_ins_upd_pers.sql > 00210_trg_before_ins_upd_pers.txt
+
+echo "  00300_trg_before_upd_cove"
+psql -d $DBNAME -U $USUARIO_DB < 00300_trg_before_upd_cove.sql > 00310_trg_before_upd_cove.txt
+
+echo "  00400_trg_before_upd_nove"
+psql -d $DBNAME -U $USUARIO_DB < 00400_trg_before_upd_nove.sql > 00410_trg_before_upd_nove.txt
+
+echo "  00500_trg_before_upd_vent"
+psql -d $DBNAME -U $USUARIO_DB < 00500_trg_before_upd_vent.sql > 00510_trg_before_upd_vent.txt
+
+echo "  00600_trg_after_upd_cove"
+psql -d $DBNAME -U $USUARIO_DB < 00600_trg_after_upd_cove.sql > 00610_trg_after_upd_cove.txt
+
+echo "  00700_trg_after_upd_nove"
+psql -d $DBNAME -U $USUARIO_DB < 00700_trg_after_upd_nove.sql > 00710_trg_after_upd_nove.txt
+
+echo "  00800_trg_before_ins_cove"
+psql -d $DBNAME -U $USUARIO_DB < 00800_trg_before_ins_cove.sql > 00810_trg_before_ins_cove.txt
+
+echo "  00900_trg_before_ins_nove"
+psql -d $DBNAME -U $USUARIO_DB < 00900_trg_before_ins_nove.sql > 00910_trg_before_ins_nove.txt
+
+echo "  01000_trg_before_ins_vent"
+psql -d $DBNAME -U $USUARIO_DB < 01000_trg_before_ins_vent.sql > 01010_trg_before_ins_vent.txt
+
+echo "  01100_trg_before_ins_empr"
+psql -d $DBNAME -U $USUARIO_DB < 01100_trg_before_ins_empr.sql > 01110_trg_before_ins_empr.txt
+
+echo "  01200_trg_after_ins_empr"
+psql -d $DBNAME -U $USUARIO_DB < 01200_trg_after_ins_empr.sql > 01210_trg_after_ins_empr.txt
+
+echo "  01300_trg_after_ins_upd_delp"
+psql -d $DBNAME -U $USUARIO_DB < 01300_trg_after_ins_upd_delp.sql > 01310_trg_after_ins_upd_delp.txt
+
+echo "  01400_trg_after_upd_vent"
+psql -d $DBNAME -U $USUARIO_DB < 01400_trg_after_upd_vent.sql > 01410_trg_after_upd_vent.txt
+
+cd ..
+
+echo "Poblando datos iniciales"
+psql -d $DBNAME -U $USUARIO_DB < 00600_datos_iniciales.sql > 00610_datos_iniciales.txt
+
+echo "Poniendo secuencias al dia"
+./00700_secuencias.sh
+
+#echo "Creando tablas extra ERP"
+#psql -d $DBNAME -U $USUARIO_DB < 01800_tablas_extra_ERP.sql > 01810_tablas_extra_ERP.txt
+
+#echo "Poblando tabla tablas_secuencias"
+#./01900_poblar_tase.sh
+
+#psql -d $DBNAME -U $USUARIO_DB < 01910_poblar_tase.sql > 01920_poblar_tase.txt
+
+#echo "Poblando tablas fode y fide"
+#psql -d $DBNAME -U $USUARIO_DB < 02000_poblar_fode_fide.sql > 02010_poblar_fode_fide.txt
+
+echo "Creando vistas **complejas**"
+psql -d $DBNAME -U $USUARIO_DB < 02100_vistas_tablas_complejas.sql > 02110_vistas_tablas_complejas.txt
+
+echo "Insertando perf, prog, pepr"
+psql -d $DBNAME -U $USUARIO_DB < 02200_perf_prog_pepr.sql > 02210_perf_prog_pepr.txt
+
+echo "Vista perfilamiento"
+psql -d $DBNAME -U $USUARIO_DB < 02300_vista_perfilamiento.sql > 02310_vista_perfilamiento.txt
+
+echo "Poniendo secuencias al dia"
+./00700_secuencias.sh
+
+echo "Insertando datos de prueba (ficticios)"
+psql -d $DBNAME -U $USUARIO_DB < 99000_datos_de_prueba.sql > 99010_datos_de_prueba.txt
+
+echo "Poniendo secuencias al dia"
+./00700_secuencias.sh
+
+echo

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+clear
+
+psql -d erp_bt5 -U erp_bt5 < 00050_language.sql > 00060_language.txt
+
+./00100_drop_table.sh
+
+psql -d erp_bt5 -U erp_bt5 < 00110_drop_table.sql > 00120_drop_table.txt
+
+psql -d erp_bt5 -U erp_bt5 < 00200_tablas.sql > 00210_tablas.txt
+
+./00300_vistas_cortas.sh
+
+psql -d erp_bt5 -U erp_bt5 < 00310_vistas_cortas.sql > 00320_vistas_cortas.txt
+
+./00700_secuencias.sh
+
+psql -d erp_bt5 -U erp_bt5 < 00600_datos_iniciales.sql > 00610_datos_iniciales.txt
+
+./00700_secuencias.sh
+
+psql -d erp_bt5 -U erp_bt5 < 99000_datos_de_prueba.sql > 99010_datos_de_prueba.txt
+
+./00700_secuencias.sh

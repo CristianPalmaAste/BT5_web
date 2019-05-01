@@ -1,0 +1,26 @@
+CREATE FUNCTION
+ f_dv_rut_cl 
+-------------
+ 0
+(1 fila)
+
+ f_dv_rut_cl 
+-------------
+ 8
+(1 fila)
+
+ f_dv_rut_cl 
+-------------
+ 4
+(1 fila)
+
+ f_dv_rut_cl 
+-------------
+ 8
+(1 fila)
+
+ f_dv_rut_cl 
+-------------
+ K
+(1 fila)
+

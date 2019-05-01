@@ -1,0 +1,96 @@
+echo "El documento prueba_1.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-01-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_1.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_1.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_1.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_1.txt
+echo "El documento prueba_2.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-02-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_2.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_2.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_2.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_2.txt
+echo "El documento prueba_3.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-03-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_3.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_3.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_3.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_3.txt
+echo "El documento acta_const_soc.docx de tipo CONTRATO DE ARRIENDO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_4.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_4.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_4.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_4.txt
+echo "El documento prueba_4.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_5.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_5.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_5.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_5.txt
+echo "El documento prueba_5.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_6.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_6.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_6.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_6.txt
+echo "El documento prueba_6.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_7.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_7.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_7.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_7.txt
+echo "El documento prueba_7.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_8.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_8.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_8.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_8.txt
+echo "El documento prueba_8.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_9.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_9.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_9.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_9.txt
+echo "El documento prueba_9.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_10.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_10.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_10.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_10.txt
+echo "El documento prueba_10.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_11.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_11.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_11.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_11.txt
+echo "El documento prueba_11.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_12.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_12.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_12.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_12.txt
+echo "El documento prueba_12.txT de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_13.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_13.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_13.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_13.txt
+echo "El documento prueba_13.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_14.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_14.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_14.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_14.txt
+echo "El documento prueba_14.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_15.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_15.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_15.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_15.txt
+echo "El documento prueba_15.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_16.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_16.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_16.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_16.txt
+echo "El documento prueba_16.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_17.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_17.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_17.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_17.txt
+echo "El documento prueba_17.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_18.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_18.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_18.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_18.txt
+echo "El documento prueba_18.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_19.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_19.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_19.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_19.txt
+echo "El documento prueba_19.txt de tipo CONTRATO DE ARRIENDO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_20.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_20.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_20.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_20.txt
+echo "El documento const_soc.txt de tipo CONSTITUCIÓN DE SOCIEDAD, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_21.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_21.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_21.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_21.txt
+echo "El documento act_dir.txt de tipo ACTA DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_22.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_22.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_22.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_22.txt
+echo "El documento ses_dir.txt de tipo SESIÓN DE DIRECTORIO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_23.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_23.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_23.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_23.txt
+echo "El documento cont_arr.txt de tipo CONTRATO DE ARRIENDO, tenia fecha de aviso 01-04-2017"         >  /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_24.txt
+echo " "          >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_24.txt
+echo "Atte.,"     >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_24.txt
+echo "Gestio ERP" >> /home/cpalma/git/bt5/BT5/00300_erp_bt5/01700_crontabs/mandar_aviso_por_dole/arch_24.txt

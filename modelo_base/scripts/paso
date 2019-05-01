@@ -1,0 +1,391 @@
+SET
+               ?column?                
+---------------------------------------
+ create sequence grem_seq start with 5
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence empr_seq start with 12
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence para_seq start with 21
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence paem_seq start with 12
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esge_seq start with 4
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence rubr_seq start with 38
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esre_seq start with 3
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence vapa_seq start with 91
+(1 fila)
+
+                ?column?                 
+-----------------------------------------
+ create sequence mone_seq start with 503
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence gere_seq start with 46
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence proy_seq start with 55
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence line_seq start with 64
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence ceco_seq start with 46
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence tare_seq start with 37
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence pais_seq start with 11
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence pers_seq start with 14
+(1 fila)
+
+                 ?column?                 
+------------------------------------------
+ create sequence perf_seq start with 2024
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esci_seq start with 5
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence sexo_seq start with 3
+(1 fila)
+
+                 ?column?                  
+-------------------------------------------
+ create sequence prog_seq start with 99001
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence usua_seq start with 14
+(1 fila)
+
+                 ?column?                 
+------------------------------------------
+ create sequence uspe_seq start with 1062
+(1 fila)
+
+                ?column?                 
+-----------------------------------------
+ create sequence pepr_seq start with 250
+(1 fila)
+
+                ?column?                 
+-----------------------------------------
+ create sequence plcu_seq start with 793
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence dole_seq start with 25
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence tidl_seq start with 17
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence esdl_seq start with 13
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence sosh_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence essh_seq start with 6
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence cosh_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence dcsh_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence ecsh_seq start with 4
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence orsh_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence dosh_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence eosh_seq start with 5
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence posh_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence epos_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence tifp_seq start with 7
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence fpnv_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence fpve_seq start with 1
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence unt1_seq start with 17
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence unt2_seq start with 57
+(1 fila)
+
+                ?column?                 
+-----------------------------------------
+ create sequence unt3_seq start with 368
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence ticl_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence ticv_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence escv_seq start with 5
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esnv_seq start with 5
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esve_seq start with 4
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence orpr_seq start with 3
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence unmp_seq start with 10
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence unms_seq start with 2
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence tipr_seq start with 16
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence impu_seq start with 5
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence tipi_seq start with 4
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence tidv_seq start with 5
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence tise_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence clie_seq start with 2
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence vent_seq start with 2
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence deve_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence nove_seq start with 2
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence denv_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence cove_seq start with 2
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence decv_seq start with 3
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence prod_seq start with 18
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence serv_seq start with 7
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence domi_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence vado_seq start with 1
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence bode_seq start with 12
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence bopr_seq start with 18
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence lipr_seq start with 3
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence delp_seq start with 35
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence fapr_seq start with 12
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence sfpr_seq start with 12
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence timb_seq start with 6
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence mobo_seq start with 2
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence demb_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence desu_seq start with 8
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence bicp_seq start with 35
+(1 fila)
+

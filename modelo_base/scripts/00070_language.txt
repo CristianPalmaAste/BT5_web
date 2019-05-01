@@ -1,0 +1,3 @@
+ERROR:  no se puede eliminar lenguaje plpgsql porque extensión plpgsql lo requiere
+HINT:  Puede eliminar extensión plpgsql en su lugar.
+ERROR:  ya existe el lenguaje «plpgsql»

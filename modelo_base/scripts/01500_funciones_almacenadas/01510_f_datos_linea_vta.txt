@@ -1,0 +1,26 @@
+CREATE FUNCTION
+         ?column?          
+---------------------------
+ precio vta prod 16    : 0
+(1 fila)
+
+         ?column?          
+---------------------------
+ exento prod 16        : 0
+(1 fila)
+
+         ?column?          
+---------------------------
+ afecto prod 16        : 0
+(1 fila)
+
+         ?column?          
+---------------------------
+ imptos oblig prod 16  : 0
+(1 fila)
+
+         ?column?          
+---------------------------
+ imptos especif prod 16: 0
+(1 fila)
+

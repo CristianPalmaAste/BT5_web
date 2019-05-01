@@ -1,0 +1,46 @@
+CREATE FUNCTION
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 0
+(1 fila)
+
+ f_datos_producto 
+------------------
+ 
+(1 fila)
+

@@ -1,0 +1,203 @@
+<?php
+   class GridRow {
+      public $props=[];
+	  
+	  public function __construct($props) {
+		 $this->props = $props; 
+      }
+	  
+	  public function getProp($pName, $vdefault="") {
+	     if (isset($this->props[$pName]))
+		    return $this->props[$pName];
+	     else
+		    return $vdefault;
+	  }
+	  
+	  public function show() {
+	     $gadget   = $this->getProp("gadget",   "text");
+		 $type     = $this->getProp("type",     "C");
+		 $name     = $this->getProp("name",     "NONAME");
+		 $id       = $this->getProp("id",       $name);
+		 $readonly = $this->getProp("readonly", false);		 
+		 $nRow     = $this->getProp("nRow",     "");
+		 $value    = $this->getProp("value",    "");
+		 $onblur   = $this->getProp("onblur",   "");
+		 
+		 $name .= $nRow;
+		 $id   .= $nRow;
+		 
+		 $s = "";
+		 switch($gadget) {
+		    case "text":
+			   $size      = $this->getProp("size", 10);
+			   $maxlength = $this->getProp("maxlength", 10);
+			   
+			   $s .= "<input type='text' id='$id' name='$name' size='$size' maxlength='$maxlength'";
+			   
+			   if ($type=="I" || $type=="N")
+				  $s .= " style='color:black;text-align:right;'"; 
+			   else
+			      $s .= " style='color:black;'";
+			   
+			   if ($value!="")
+				  $s .=" value='$value'";
+			   
+			   if ($readonly)
+				  $s .=" readonly";
+			   else if ($onblur!="") {
+				  $s .= " onblur='".$onblur."($nRow);'";
+			   }
+			  
+			   $s .= "/>";
+			   break;
+			
+			case "button":
+			   $caption = $this->getProp("caption", $name);
+               $s .= "<input type='button' id='$id' name='$name' value='$caption' class='btn btn-info btn-sm' style='height:30px'/>";
+               break;	
+			   
+			case "link":
+			   $caption = $this->getProp("caption", $name);
+               $s .= "<a href='#' >$caption</a>";
+               break;	
+			   
+			case "hidden":
+               $s .= "<input type='hidden' id='$id' name='$name' value='$value'/>";
+               break;			   
+		 }
+		 
+		 return $s;
+	  } 
+   }
+
+   class Grid {
+      public $cols=[];
+	  public $rows=[];
+	  public $nRow=0;
+	  public $readonly=false;
+	  
+	  public function __construct($rows) {	 
+		 $this->rows=$rows;
+	  }
+	  
+	  function addCol($props=array()) {
+		 if ($this->readonly)
+            $props["readonly"] = true;
+		
+		 $this->cols[] = new GridRow($props);
+		 //print_r($this->cols);
+		 
+	  }
+	  
+	  public function showHeader() {
+		 
+		 
+		 $s = "<thead>\n<tr>\n";
+		 //$s .= "<td>&nbsp;</td>\n";
+		 foreach($this->cols as $c) {
+			$caption = $c->getProp("caption", "NOCAPTION");
+			$gadget  = $c->getProp("gadget",  "text");
+			
+			if ($gadget!="hidden")
+			   $s.= "<th>$caption</th>\n";
+		 }
+		 
+         $s .= "</tr>\n</thead>\n";
+
+         return $s;		 
+	  }
+	  
+	  public function preShowField($name, $r, $rows) {
+		 return $r;
+	  }
+	  
+	  public function showRow($i, $hidden=false) {
+		 $ss = "<tr>\n";		
+		 //$ss .= "<td style='border: 1px white;'>$i</td>\n";	
+		 		 
+		 $lista="";	 
+		 foreach($this->cols as $r) {	
+            $name = $r->getProp("name", "NONAME");
+			
+		    $r->props["nRow"]=$i;
+			
+			if ($i < count($this->rows)) {	
+               if (isset($this->rows[$i][$name])) {			
+			      $r->props["value"] = $this->rows[$i][$name];			
+			      $r = $this->preShowField($name, $r, $this->rows[$i]);
+			   }
+			}
+			else {
+			   //echo $name."<hr>";
+			   $r->props["value"] = "";	
+			
+			   
+			   $r = $this->preShowField($name, $r, []);
+			}
+
+			if ($this->readonly)
+			   $r->props["readonly"] = true;
+		   
+            $fld = $r->show();
+			
+			$gadget = $r->getProp("gadget", "text");
+			
+			if ($hidden)
+			   $r->props["readonly"]=true;
+			
+			if ($gadget=="hidden")
+			   $lista .= $fld;
+		    else
+			   $ss .= "<td>".$fld."</td>\n";
+		 }
+		 
+		 $ss .= $lista."</tr>\n";
+		 
+		 return $ss;
+	  }
+	  
+	  
+	  function showRows() {		 
+	      if (count($this->rows)==0)
+			foreach($this->cols as $r) {
+			   $name = $r->getProp("name", "NONAME");
+			   
+			   $this->rows[0][$name]= "";
+			}
+			
+		 $s = "<tbody>\n";
+		 $this->nRow=0;
+		 
+         for ($i=0; $i < count($this->rows); $i++) {
+			$this->nRow = $i; 
+		    $s .= $this->showRow($i);
+         }		
+
+		 //$i++;
+         while ($i%10!=0) {	 
+		 	$this->nRow = $i; 
+		    $s .= $this->showRow($i);
+		 	
+		 	$i++;
+         }				 
+         		
+         $s .= "</tbody>";				
+		 return $s;
+	  }
+	  
+	  function showFooter() {
+		 return "";
+	  }
+	  
+	  function show() {
+		 //if (!$this->readonly)
+		 //   $this->addCol(["name" => "btnDel", "caption" => "Elim",  "gadget" => "link"]);  
+		
+		 return "<table class='scroll' border='1' style='border:1px solid white;'>\n".
+		        $this->showHeader().
+				$this->showRows().
+				$this->showFooter().
+				"</table>";
+	  } 
+	  
+   }

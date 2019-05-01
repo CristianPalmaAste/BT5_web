@@ -1,0 +1,17 @@
+SET
+DROP VIEW
+CREATE VIEW
+ id_holding | holding | id_empresa | empresa | id_perfil |    perfil    |  username   | idusua | idpers 
+------------+---------+------------+---------+-----------+--------------+-------------+--------+--------
+            | --      |            | --      |         1 | CONFIGURADOR | NSALAZARG   |      9 |      9
+            | --      |            | --      |         1 | CONFIGURADOR | ROSILVA     |      2 |      2
+            | --      |            | --      |         1 | CONFIGURADOR | CPALMAA     |     10 |     10
+            | --      |            | --      |         1 | CONFIGURADOR | ADMIN       |      1 |      1
+            | --      |            | --      |         1 | CONFIGURADOR | OSOLARM     |      8 |      8
+            | --      |            | --      |         1 | CONFIGURADOR | SEAGUIRRE   |      3 |      3
+            | --      |            | --      |         1 | CONFIGURADOR | RQUEZADAA   |      7 |      7
+            | --      |            | --      |         1 | CONFIGURADOR | ROCIFUENTES |      6 |      6
+            | --      |            | --      |         1 | CONFIGURADOR | JJMONSALVE  |      4 |      4
+            | --      |            | --      |         1 | CONFIGURADOR | JABORZONE   |      5 |      5
+(10 filas)
+

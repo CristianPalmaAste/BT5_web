@@ -1,0 +1,18 @@
+      function updateTotals() {
+	     {{ini_sums}}
+		 
+		 tbl = document.getElementById("mitabla");
+		 
+		 //alert(tbl.rows.length);
+		 
+		 for (i=2; i <= tbl.rows.length; i++) {
+		    data = document.getElementById("data"+i).value;
+			
+			e = data.split("|");
+			{{inicializa_con_es}}
+						
+			{{actualiza_sums}}
+		 }
+		 
+		 {{sums_a_totales}} 
+	  }

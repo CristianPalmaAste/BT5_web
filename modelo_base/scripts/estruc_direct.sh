@@ -1,0 +1,122 @@
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 1
+cd 1
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 2
+cd 2
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 3
+cd 3
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 4
+cd 4
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 5
+cd 5
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 6
+cd 6
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 7
+cd 7
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 8
+cd 8
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 9
+cd 9
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+mkdir 10
+cd 10
+mkdir holding
+mkdir empresas
+mkdir legales
+mkdir honorarios
+mkdir rendiciones
+mkdir compras
+mkdir ventas
+mkdir contabilidad
+
+cd /var/www/html/erpbt5/sistema/ERP_BT5/webroot/media_holdings/
+chmod 777 * -R

@@ -1,0 +1,139 @@
+      function gval(name) {
+		 return document.getElementById(name);
+	  }
+	  
+	  function despeja() {
+		 {{inicializa}}
+		
+		 document.getElementById("{{firstField}}").focus();
+	  }
+	  
+	  document.getElementById('btnCancel').onclick=function() {
+		 despeja();
+		 
+		 switchButtons("on");
+	  }
+	  
+      document.getElementById("btnOk").onclick=function() {
+	     //Los datos vienen OK?
+	     if (!validRow()) 
+		    return; //No, chao
+			
+		 tbl = document.getElementById("mitabla");
+		 currentRow = document.getElementById("currentRow").value;
+		 
+		 if (currentRow=="") {
+		    nRow = tbl.rows.length;
+		    var row = tbl.insertRow(nRow);
+		 }
+		 else {
+			nRow = currentRow;
+			var row = tbl.rows[nRow];
+		 }
+		    
+ 	     {{setea_variables}}
+		 
+		 data = {{data}};
+		 		   		 
+    	 row.innerHTML = "<tr><input type='hidden' id='data"+nRow+"' value='"+data+"'/>"+
+    		                 {{valores_td}}
+      						 "<td class='fondoCelda'><input type='button' value='Edit' onclick='javascript:editar("+nRow+")' class='btn btn-default'/>&nbsp;"+
+    						 "<input type='button' value='Del' onclick='javascript:eliminar("+nRow+")' class='btn btn-default'/></td>"+
+    	                     "</tr>";
+    		
+		 //alert(row.innertHTML);
+			 
+    	 despeja();
+    		 
+    	 document.getElementById("currentRow").value="";
+    		 
+    	 switchButtons("on");
+			 
+		 updateTotals();		 
+	  }
+	  
+	  function editar(nRow) {
+		 data = document.getElementById("data"+nRow).value;	
+		 
+		 e = data.split("|");
+			
+		 {{mueve_a_inputs_e}}	
+		 	 
+		 document.getElementById("{{firstField}}").focus();
+		 
+		 document.getElementById("currentRow").value=nRow;
+		 
+		 switchButtons("off");
+	  }
+	  
+	  function eliminar(nRow) {
+		 listaN=new Array();
+		 tbl = document.getElementById("mitabla");
+		 
+		 for(i=2; i < tbl.rows.length; i++) {	          		 
+			if (i!=nRow)
+			   listaN[listaN.length] = document.getElementById("data"+i).value;		            
+		 }
+		 
+		 i = tbl.rows.length-1;
+		 
+		 while (i > 1) {
+			//alert(i);
+			
+		    tbl.deleteRow(i);				
+			i--;
+		 }
+		 
+		 //alert("borrados: "+tbl.rows.length);
+		 
+		 for (j=0; j < listaN.length; j++) {			
+			nRow = tbl.rows.length;
+  		    var row = tbl.insertRow(nRow);
+			
+			data = listaN[j];
+			
+			e = data.split("|");
+			
+			{{inicializa_con_es}}
+						
+            row.innerHTML = "<tr><input type='hidden' id='data"+nRow+"' value='"+data+"'/>"+
+	                     {{valores_td}}
+						 "<td class='fondoCelda'><input type='button' value='Edit' onclick='javascript:editar("+nRow+")' class='btn btn-default'/>&nbsp;"+
+						 "<input type='button' value='Del' onclick='javascript:eliminar("+nRow+")' class='btn btn-default'/></td>"+
+	                     "</tr>";
+		 }
+		 
+		 updateTotals();
+	  }
+	  
+	  function switchButtons(cmd) {
+         var elements = document.getElementById("frm").elements;
+         
+         for (var i = 0, element; element = elements[i++];) {
+             if (element.type == "button" && (element.value == "Edit" || element.value == "Del"))
+                element.disabled=(cmd=="on")?false:true;
+         }		  
+	  }
+	  
+	  function updateTotals() {
+	     {{ini_sums}}
+		 
+		 tbl = document.getElementById("mitabla");
+		 
+		 for (i=2; i < tbl.rows.length; i++) {
+		    data = document.getElementById("data"+i).value;
+			
+			e = data.split("|");
+			{{inicializa_con_es}}
+						
+			{{actualiza_sums}}
+		 }
+		 
+		 {{sums_a_totales}} 
+	  }
+	  
+	  function validRow() {
+	     {{req_fields}}
+		 
+	     return true;
+	  }

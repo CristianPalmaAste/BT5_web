@@ -1,0 +1,86 @@
+SET
+               ?column?                
+---------------------------------------
+ create sequence grem_seq start with 4
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence empr_seq start with 11
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence para_seq start with 1
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esge_seq start with 5
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence rubr_seq start with 26
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esre_seq start with 4
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence vapa_seq start with 51
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence mone_seq start with 11
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence pais_seq start with 11
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence pers_seq start with 3
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence perf_seq start with 19
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence esci_seq start with 3
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ create sequence sexo_seq start with 3
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence prog_seq start with 48
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence usua_seq start with 13
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence uspe_seq start with 16
+(1 fila)
+
+                ?column?                
+----------------------------------------
+ create sequence pepr_seq start with 66
+(1 fila)
+

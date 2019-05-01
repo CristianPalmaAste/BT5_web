@@ -1,0 +1,21 @@
+/estados-cotizaciones-vtas                    Estados de Cotizaciones Ventas
+/estados-notas-vtas                           Estados de Notas de Ventas        
+/estados-ventas                               Estados de Ventas
+/impuestos (campo país no se muestra)         Impuestos
+/origenes-productos                           Orígenes de Productos
+/tipos-formas-pagos                           Tipos Formas de Pago
+/tipos-clientes                               Tipos de Clientes
+/tipos-cotizaciones-vtas                      Tipos Cotizaciones Ventas
+/tipos-productos                              Tipos de Productos   
+/tipos-doctos-ventas                          Tipos de Documentos de Ventas
+/tipos-servicios                              Tipos de Servicios
+/unidades-medidas-productos                   Unidades de Medida de los Productos
+/unidades-medidas-servicios                   Unidades de Medida de los Servicios
+/tipos-productos-impuestos                    Impuestos por Tipo de Producto
+/unidades-territoriales-1                     Regiones
+/unidades-territoriales-2                     Provincias
+/unidades-territoriales-3                     Comunas
+/clientes                                     Clientes
+/productos                                    Productos
+/servicios                                    Servicios
+

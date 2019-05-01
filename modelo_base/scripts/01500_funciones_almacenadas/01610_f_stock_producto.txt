@@ -1,0 +1,16 @@
+CREATE FUNCTION
+               ?column?                
+---------------------------------------
+ stock físico prod 1               : 0
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ stock disponible para venta prod 1: 0
+(1 fila)
+
+               ?column?                
+---------------------------------------
+ stock reservado prod 1            : 0
+(1 fila)
+

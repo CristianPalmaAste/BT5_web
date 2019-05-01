@@ -1,0 +1,138 @@
+SET
+DROP VIEW
+CREATE VIEW
+ id | idgrem | holding |   rut    | dv | primernombre  | segundonombre | apellidopaterno | apellidomaterno |            email             |  fechanac  | idesci | estadocivil | idsexo |   sexo    | idpais | nacionalidad 
+----+--------+---------+----------+----+---------------+---------------+-----------------+-----------------+------------------------------+------------+--------+-------------+--------+-----------+--------+--------------
+  1 |      1 | BT5     | 1        | 9  | ADMINISTRADOR |               | SISTEMA         | AS              |                              |            |        |             |        |           |        | 
+  2 |      1 | BT5     | 2        | 7  | ROLANDO       |               | SILVA           | -               |                              |            |      2 | CASADO      |      1 | MASCULINO |      1 | CHILENA
+  3 |      1 | BT5     | 3        | 5  | SERGIO        |               | AGUIRRE         | -               | sergio.aguirre@bt5.cl        |            |      1 | SOLTERO     |      1 | MASCULINO |      1 | CHILENA
+  4 |      1 | BT5     | 4        | 3  | JUAN          | JOSE          | MONSALVE        | -               | juan.jose.monsalve@bt5.cl    |            |        |             |      1 | MASCULINO |      1 | CHILENA
+  5 |      1 | BT5     | 5        | 1  | JUAN          | ANDRES        | BORZONE         | -               |                              |            |        |             |      1 | MASCULINO |      1 | CHILENA
+  6 |      1 | BT5     | 6        | K  | RODRIGO       |               | CIFUENTES       | -               | rodrigo.cifuentes@bt5.cl     |            |      1 | SOLTERO     |      1 | MASCULINO |      1 | CHILENA
+  7 |      1 | BT5     | 7695503  | 4  | ROBERTO       | DANIEL        | QUEZADA         | ASTE            | roberto.quezada@bt5.cl       |            |      2 | CASADO      |      1 | MASCULINO |      1 | CHILENA
+  8 |      1 | BT5     | 8965445  | 9  | OSCIEL        | SEGUNDO       | SOLAR           | MALDONADO       | solar2design@gmail.com       |            |      2 | CASADO      |      1 | MASCULINO |      1 | CHILENA
+  9 |      1 | BT5     | 13254825 | 0  | NILTON        | PATRICIO      | SALAZAR         | GONZALEZ        | nilton.salazar@gmail.com     |            |      1 | SOLTERO     |      1 | MASCULINO |      1 | CHILENA
+ 10 |      1 | BT5     | 10917721 | 0  | G. CRISTIAN   |               | PALMA           | ASTE            | gerardo.palma.aste@gmail.com | 1968-11-12 |      1 | SOLTERO     |      1 | MASCULINO |      1 | CHILENA
+(10 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | idtidl | tipodocumentolegal | nombreoriginal | nombresistema | idesdl | estadodocumentolegal | fecha | notaria | foja | responsable | comentario | fechaaviso | emailaviso | avisodado 
+----+--------+---------+--------+--------------------+----------------+---------------+--------+----------------------+-------+---------+------+-------------+------------+------------+------------+-----------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id |               nombre               | alias |  icono  | idpais | pais  | idesge | estadoholding 
+----+------------------------------------+-------+---------+--------+-------+--------+---------------
+  1 | BUSINESS & TECHNOLOGY 5 CONSULTING | BT5   | bt5.jpg |      1 | CHILE |      1 | ACTIVO
+(1 fila)
+
+DROP VIEW
+CREATE VIEW
+ id | idgrem |              holding               | idpais | pais  | idrubr | rubro | idesre | estadoregistro | identificador1 | identificador2 |            razonsocial             | nombrefantasia |  icono  
+----+--------+------------------------------------+--------+-------+--------+-------+--------+----------------+----------------+----------------+------------------------------------+----------------+---------
+  1 |      1 | BUSINESS & TECHNOLOGY 5 CONSULTING |      1 | CHILE |      1 | OTRO  |      1 | ACTIVO         | 1              | 9              | BUSINESS & TECHNOLOGY 5 CONSULTING | BT5            | bt5.jpg
+(1 fila)
+
+DROP VIEW
+CREATE VIEW
+ id | idusua | username | idperf | perfil | idgrem | holding | idempr | razonsocial | idesre | estadoregistro 
+----+--------+----------+--------+--------+--------+---------+--------+-------------+--------+----------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idperf | perfil | idprog | programa 
+----+--------+--------+--------+----------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idtipr |    tipo_producto    | idimpu |                    impuesto                    | alias_impuesto | valor 
+----+--------+---------------------+--------+------------------------------------------------+----------------+-------
+  1 |      4 | BEBIDAS GASEOSAS    |      3 | IMPUESTO ADICIONAL A LAS BEBIDAS ANALCOHÓLICAS | IABA           |   5.0
+  2 |      5 | BABIDAS ALCOHÓLICAS |      2 | IMPUESTO ADICIONAL A LAS BEBIDAS ALCOHÓLICAS   | ILA            |  20.0
+(2 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idgrem | holding | idpais | pais | identificador1 | identificador2 | idticl | tipo_cliente | razonsocial | nombrefantasia | primernombre | segundonombre | apellidopaterno | apellidomaterno 
+----+--------+---------+--------+------+----------------+----------------+--------+--------------+-------------+----------------+--------------+---------------+-----------------+-----------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | idsfpr | sub_familia | nombre_sub_familia | idfapr | familia | nombre_familia | idtipr | tipo_producto | idunmp | unidad_de_medida | alias_unidad_de_medida | idorpr | origen | alias_origen | nombre | producto | sku | ean13 | qr | pesounitariokg | idesre | estado_regsitro 
+----+--------+---------+--------+-------------+--------------------+--------+---------+----------------+--------+---------------+--------+------------------+------------------------+--------+--------+--------------+--------+----------+-----+-------+----+----------------+--------+-----------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | idtise | tipo_servicio | idunms | unidad_medida_servicio | alias_unidad_medida_servicio | nombre | preciounitario | idmone | moneda | alias_moneda 
+----+--------+---------+--------+---------------+--------+------------------------+------------------------------+--------+----------------+--------+--------+--------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | numero_cotiz | idclie | cliente | desc_cotiz | idgere | gerencia | idproy | proyecto | idline | linea_negocio | idceco | centro_costo | idtare | tarea | exento | afecto | impuestosobligats | impuestosespecifs | porcentajedescuento | montodescuento | total | diasvalidez | idescv | estado_cotiz 
+----+--------+---------+--------------+--------+---------+------------+--------+----------+--------+----------+--------+---------------+--------+--------------+--------+-------+--------+--------+-------------------+-------------------+---------------------+----------------+-------+-------------+--------+--------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | idcove | numero_cotizacion | numero_nota_venta | idclie | cliente | descripcion_nota_venta | fecha_nota_venta | idgere | gerencia | idproy | proyecto | idline | linea_negocio | idceco | centro_costo | idtare | tarea | exento | afecto | impuestosobligats | impuestosespecifs | porc_descto | monto_descto | total | idesnv | estado_nota_venta 
+----+--------+---------+--------+-------------------+-------------------+--------+---------+------------------------+------------------+--------+----------+--------+----------+--------+---------------+--------+--------------+--------+-------+--------+--------+-------------------+-------------------+-------------+--------------+-------+--------+-------------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | idnove | numero_nota_venta | idtidv | tipo_docto_venta | folio_docto_venta | idclie | cliente | descripcion_venta | fecha_venta | idgere | gerencia | idproy | proyecto | idline | linea_negocio | idceco | centro_costo | idtare | tarea | exento | afecto | impuestosobligats | impuestosespecifs | porc_descto | monto_descto | total | idesve | estado_venta 
+----+--------+---------+--------+-------------------+--------+------------------+-------------------+--------+---------+-------------------+-------------+--------+----------+--------+----------+--------+---------------+--------+--------------+--------+-------+--------+--------+-------------------+-------------------+-------------+--------------+-------+--------+--------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | cod_familia |   descripcion    
+----+--------+---------+-------------+------------------
+  1 |      1 | BT5     | 01          | FAMILIA GENÉRICA
+(1 fila)
+
+DROP VIEW
+CREATE VIEW
+ id | idfapr | cod_familia |     familia      | cod_sub_familia |     sub_familia      | idempr | empresa 
+----+--------+-------------+------------------+-----------------+----------------------+--------+---------
+  1 |      1 | 01          | FAMILIA GENÉRICA | 01              | SUB FAMILIA GENÉRICA |      1 | BT5
+(1 fila)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa |     bodega     
+----+--------+---------+----------------
+  1 |      1 | BT5     | BODEGA CENTRAL
+(1 fila)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | idbode | bodega | idprod | producto | stock | idunmp | unidad_medida 
+----+--------+---------+--------+--------+--------+----------+-------+--------+---------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idempr | empresa | correlativo | fechainicio | fechafin | observaciones | idesre | estado_regsitro 
+----+--------+---------+-------------+-------------+----------+---------------+--------+-----------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idlipr | lista_precio | idempr | empresa | idprod | producto | preciounitario 
+----+--------+--------------+--------+---------+--------+----------+----------------
+(0 filas)
+
+DROP VIEW
+CREATE VIEW
+ id | idfapr | cod_familia | familia | idsfpr | cod_sub_familia | sub_familia | idprod | producto | porcentajedescuento | idesre | estado_regsitro 
+----+--------+-------------+---------+--------+-----------------+-------------+--------+----------+---------------------+--------+-----------------
+(0 filas)
+
