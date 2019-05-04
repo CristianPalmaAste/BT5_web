@@ -14,7 +14,7 @@ class ProductosTable extends Table
     {
        
     }
-
+	
     public function validationDefault(Validator $validator)
     {
         $validator
