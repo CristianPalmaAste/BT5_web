@@ -123,8 +123,12 @@ if ($gre->idesre!=null) $cond["idesre"] = $gre->idesre;
        $this->set("errors", []);
 
 	   if ($this->request->is(['post', 'put'])) {
+		  
+		  
 	      $this->Productos->patchEntity($gre, $this->request->data);		  
-
+		  
+		  print_r($gre);
+		  
 	      if ($this->Productos->save($gre)) {  
 	         $this->Flash->success(__('Registro ha sido actualizado.'));
 	         return $this->redirect(['action' => 'index']);

@@ -14,14 +14,18 @@ class ProductosTable extends Table
     {
        
     }
-
+	
+	
+	
+	
+	
     public function validationDefault(Validator $validator)
     {
         $validator
         ->requirePresence("idempr")
         ->notEmpty("idempr", "'idempr': debe ingresar un valor en este campo.")
-        ->requirePresence("idsfpr")
-        ->notEmpty("idsfpr", "'Sub.Familia': debe ingresar un valor en este campo.")
+        //->requirePresence("idsfpr")
+        //->notEmpty("idsfpr", "'Sub.Familia': debe ingresar un valor en este campo.")
         ->requirePresence("idtipr")
         ->notEmpty("idtipr", "'Tipo Producto': debe ingresar un valor en este campo.")
         ->requirePresence("idunmp")
@@ -57,7 +61,9 @@ class ProductosTable extends Table
 
     public function beforeSave($event, $entity, $options){              
        $session = new Session();                                          
-       $idusua = $session->read('idusua');                               
+       $idusua = $session->read('idusua');                            
+       print_r($entity);
+	   
        if( $entity->isNew() ){                                            
           $query = "SELECT nextval('".$this->_seq."') id";
           $id = $this->connection()->execute($query)->fetchAll('assoc');
