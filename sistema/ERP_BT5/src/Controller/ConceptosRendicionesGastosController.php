@@ -39,9 +39,13 @@ if ($gre->idcuco!=null) $cond["idcuco"] = $gre->idcuco;
         $ConceptosRendicionesGastos = $this->paginate($this->ConceptosRendicionesGastos->find('all')->where($cond));
 
         $this->set("registros", $ConceptosRendicionesGastos); 
+		
+		$this->llena_cuentas($idgrem);
     }
 
     public function add() {
+	   $this->render("edit");
+	   
        $session = $this->request->session();
 
        $gre = $this->ConceptosRendicionesGastos->newEntity();
@@ -68,9 +72,10 @@ if ($gre->idcuco!=null) $cond["idcuco"] = $gre->idcuco;
        $gre->idgrem = $session->read("idgrem");
        //$gre->idempr = $session->read("idempr");
 	   
-	   
-
        $this->set('gre', $gre);
+	   
+	   $this->llena_cuentas($gre->idgrem);
+	   $this->render("edit");
     }
 
     public function edit($id=null) {
@@ -96,6 +101,8 @@ if ($gre->idcuco!=null) $cond["idcuco"] = $gre->idcuco;
 	   }
 
 	   $this->set('gre', $gre);
+	   
+	   $this->llena_cuentas($gre->idgrem);
     }
 	
 	public function setGrid($arr=[]) {
@@ -147,6 +154,18 @@ if ($gre->idcuco!=null) $cond["idcuco"] = $gre->idcuco;
 	   $this->set($tbl, $l);
 	   
 	}
+	
+	public function llena_cuentas($idgrem) {
+       $tabla = TableRegistry::get("cuentas_contables");
+	   
+	   $lst = $tabla->find('all')->where(["idgrem" => $idgrem, "imputable" => "S"])->order("descripcion");
+	      
+	   $l[""] = "";
+	   foreach($lst as $r)
+	      $l[$r["id"]] = $r["descripcion"];
+	   
+	   $this->set("cuentas_contables", $l);	
+    }		  
 
     public function excel() {
        header('Content-Type: text/csv; charset=utf-8');

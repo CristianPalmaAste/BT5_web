@@ -21,11 +21,11 @@ class TiposDocumentosLegalesController extends AppController{
       $session = $this->request->session();
       $idgrem = $session->read("idgrem");
 
-      if( $this->request->query['sort'] ){
+      //if( $this->request->query['sort'] ){
+      //
+      //}
 
-      }
-
-      $tiposDocumentosLegales = $this->paginate($this->TiposDocumentosLegales->findByIdgrem($idgrem));
+      $tiposDocumentosLegales = $this->paginate($this->TiposDocumentosLegales->findByIdgrem($idgrem)->where(["idusuaborraregistro IS" => null]));
 
       $this->set(compact('idgrem'));
       $this->set(compact('tiposDocumentosLegales'));
@@ -124,7 +124,7 @@ class TiposDocumentosLegalesController extends AppController{
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
-    {
+    {   /*
         $this->request->allowMethod(['post', 'delete']);
         $tiposDocumentosLegale = $this->TiposDocumentosLegales->get($id);
         if ($this->TiposDocumentosLegales->delete($tiposDocumentosLegale)) {
@@ -134,5 +134,23 @@ class TiposDocumentosLegalesController extends AppController{
         }
 
         return $this->redirect(['action' => 'index']);
+		*/
+		
+	   $session = $this->request->session();
+
+       $registro = $this->TiposDocumentosLegales->get($id);
+
+       $registro->idusuaborraregistro = $session->read("idusua");
+       $registro->fechaborraregistro  = date('Y-m-d H:i:s');	
+
+	   try {
+          $this->TiposDocumentosLegales->save($registro);
+		  $this->Flash->success(__('Tipo de documento legal ha sido eliminado.'));
+	   }
+	   catch(\Exception $e) {
+		  $this->Flash->success(__('Tipo de documento legal no ha podido ser eliminado.'));
+	   }
+
+       return $this->redirect(['action' => 'index']);
     }
 }

@@ -16,6 +16,7 @@ class FondosARendirController extends AppController
     {
         $session = $this->request->session();
         $idgrem = $session->read("idgrem");
+		$idempr = $session->read("idempr");
 
         $gre = $this->FondosARendir->newEntity();
         
@@ -44,19 +45,45 @@ if ($gre->idtare!=null) $cond["idtare"] = $gre->idtare;
         $FondosARendir = $this->paginate($this->FondosARendir->find('all')->where($cond));
 
         $this->set("registros", $FondosARendir); 
+		
+		$this->llena_lista('gerencias', 'nombre', $idempr);
+        $this->llena_lista('proyectos', 'nombre', $idempr);
+        $this->llena_lista('lineas_negocios', 'nombre', $idempr);
+        $this->llena_lista('centros_costos', 'nombre', $idempr);
+        $this->llena_lista('tareas', 'nombre', $idempr);
+	    $this->llena_lista('productos', 'nombre', $idempr);
+        $this->llena_lista('estados_notas_vtas', 'descripcion');
+	    $this->llena_lista('unidades_medidas_productos', 'descripcioncorta');
+	    $this->llena_lista('bodegas', 'nombre', $idempr);	
     }
 
     public function add() {
-       $session = $this->request->session();
+		$this->render("edit");
+		
+        $session = $this->request->session();
+        $idgrem = $session->read("idgrem");
+		$idempr = $session->read("idempr");
 
        $gre = $this->FondosARendir->newEntity();
+	   
+	   $conn = ConnectionManager::get('default');
 
        $this->set("errors", []); 
 
 	   if ($this->request->is('post')) {
+		 $gre = $this->FondosARendir->patchEntity($gre, $this->request->data);
+		   
+		 $sql = "select max(correlativo) correlativo from fondos_a_rendir where idempr=$idempr";
+              
+	     $stmt = $conn->execute($sql);
 
-	     $gre = $this->FondosARendir->patchEntity($gre, $this->request->data);
-
+         $r = $stmt ->fetchAll('assoc');
+		 
+		 if (count($r)==0)
+			$gre->correlativo = 1;
+	     else
+			$gre->correlativo = $r[0]["correlativo"] + 1;
+		
 	     if ($this->FondosARendir->save($gre)) {
 	          $this->Flash->success(__('Registro ha sido creado.'));
 	          return $this->redirect(['action' => 'index']);
@@ -76,10 +103,25 @@ if ($gre->idtare!=null) $cond["idtare"] = $gre->idtare;
 	   
 
        $this->set('gre', $gre);
+	   
+	   $this->llena_lista('gerencias', 'nombre', $idempr);
+       $this->llena_lista('proyectos', 'nombre', $idempr);
+       $this->llena_lista('lineas_negocios', 'nombre', $idempr);
+       $this->llena_lista('centros_costos', 'nombre', $idempr);
+       $this->llena_lista('tareas', 'nombre', $idempr);
+	   $this->llena_lista('productos', 'nombre', $idempr);
+       $this->llena_lista('estados_notas_vtas', 'descripcion');
+	   $this->llena_lista('unidades_medidas_productos', 'descripcioncorta');
+	   $this->llena_lista('bodegas', 'nombre', $idempr);	
+	   
+	   $this->render("edit");
     }
 
     public function edit($id=null) {
-       $session = $this->request->session();
+        $session = $this->request->session();
+        $idgrem = $session->read("idgrem");
+		$idempr = $session->read("idempr");
+		
        $gre = $this->FondosARendir->get($id);
 
        $this->set("errors", []);
@@ -101,6 +143,16 @@ if ($gre->idtare!=null) $cond["idtare"] = $gre->idtare;
 	   }
 
 	   $this->set('gre', $gre);
+	   
+	   $this->llena_lista('gerencias', 'nombre', $idempr);
+       $this->llena_lista('proyectos', 'nombre', $idempr);
+       $this->llena_lista('lineas_negocios', 'nombre', $idempr);
+       $this->llena_lista('centros_costos', 'nombre', $idempr);
+       $this->llena_lista('tareas', 'nombre', $idempr);
+	   $this->llena_lista('productos', 'nombre', $idempr);
+       $this->llena_lista('estados_notas_vtas', 'descripcion');
+	   $this->llena_lista('unidades_medidas_productos', 'descripcioncorta');
+	   $this->llena_lista('bodegas', 'nombre', $idempr);	
     }
 	
 	public function setGrid($arr=[]) {
@@ -132,7 +184,7 @@ if ($gre->idtare!=null) $cond["idtare"] = $gre->idtare;
 
     }
 	
-	public function llena_lista($tbl, $fld, $fEmpty=true) {
+	public function llena_lista($tbl, $fld, $idempr="") {
 	   $l = explode("_", $tbl);
 	   
 	   $t = "";
@@ -141,11 +193,13 @@ if ($gre->idtare!=null) $cond["idtare"] = $gre->idtare;
 		  
 	   $tabla = TableRegistry::get($t);
 	   
-	   $lst = $tabla->find('all')->order($fld);
+	   if ($idempr!="")
+		  $lst = $tabla->find('all')->where(["idempr" => $idempr])->order($fld); 
+	   else
+	      $lst = $tabla->find('all')->order($fld);
 	   
 	   $l=[];
-	   
-	   if ($fEmpty) $l[] = "";
+	   $l[""] = "";
 	   foreach($lst as $r)
 	      $l[$r["id"]] = $r[$fld];
 	   

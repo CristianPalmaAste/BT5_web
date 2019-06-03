@@ -31,13 +31,15 @@
       <div class="widget__content">
          <?=$this->Form->hidden("id")?>
          <?=$this->Form->hidden("idgrem")?>
-         <label for="idticl" class="stacked-label"><i class="pe-7s-hammer" ></i></label>
-         <?=$this->Form->select("idticl", $tipos_clientes, ["empty" => "Seleccione tipo de cliente", "class" => "stacked-input", "id" => "idticl", 'placeholder' => 'Tipo cliente*', 'style' => 'width: calc(100% - 65px);display: inline-block;height: 65px;text-color:rgb(255,255,255);background-color:rgba(0, 0, 0, 0.25);clear:right;']);?>
 		 
          <label for="identificador1" class="stacked-label"><i class="pe-7s-hammer" ></i></label>
          <?=$this->Form->text("identificador1", ["size" => 10, "maxlength" => 11, "class" => "stacked-input upper", "id" => "identificador1", "placeholder" => "identificador1", 'placeholder' => 'Rut*']);?>
          <label for="identificador2" class="stacked-label"><i class="pe-7s-hammer" ></i></label>
          <?=$this->Form->text("identificador2", ["size" => 10, "maxlength" => 1, "class" => "stacked-input upper", "id" => "identificador2", "placeholder" => "identificador2", 'placeholder' => 'Dv*']);?>
+
+         <label for="idticl" class="stacked-label"><i class="pe-7s-hammer" ></i></label>
+         <?=$this->Form->select("idticl", $tipos_clientes, ["empty" => "Seleccione tipo de cliente", "class" => "stacked-input", "id" => "idticl", 'placeholder' => 'Tipo cliente*', 'style' => 'width: calc(100% - 65px);display: inline-block;height: 65px;text-color:rgb(255,255,255);background-color:rgba(0, 0, 0, 0.25);clear:right;']);?>
+		 
          <label for="razonsocial" class="stacked-label"><i class="pe-7s-hammer" ></i></label>
          <?=$this->Form->text("razonsocial", ["size" => 10, "maxlength" => 60, "class" => "stacked-input upper", "id" => "razonsocial", "placeholder" => "razonsocial", 'placeholder' => 'Razón Social']);?>
          <label for="nombrefantasia" class="stacked-label"><i class="pe-7s-hammer" ></i></label>
@@ -71,6 +73,30 @@
 
 <script language="javascript">
    rut=document.getElementById("identificador1");
+   
+    if (document.getElementById("idticl").value!=1) {
+      
+      
+      razonsocial.readOnly    = false;
+      nombrefantasia.readOnly = false;
+      
+      primernombre.readOnly    = true;
+      segundonombre.readOnly   = true;
+      apellidopaterno.readOnly = true;
+      apellidomaterno.readOnly = true; 
+      
+   }
+   else {
+      
+      
+      razonsocial.readOnly    = true;
+      nombrefantasia.readOnly = true;
+      
+      primernombre.readOnly    = false;
+      segundonombre.readOnly   = false;
+      apellidopaterno.readOnly = false;
+      apellidomaterno.readOnly = false; 		 
+   }
 
    //alert(rut.value);
 
@@ -101,15 +127,33 @@
    document.getElementById("idticl").onchange = function () {
       //alert("idticl:" +this.value);
 	   
-	  if (this.value==1) {	 
-		 document.getElementById("razonsocial").value="";
-		 document.getElementById("nombrefantasia").value="";
+	  if (this.value!=1) {
+		 primernombre.value    = null;
+         segundonombre.value   = null;
+         apellidopaterno.value = null;
+         apellidomaterno.value = null;
+ 
+		 razonsocial.readOnly    = false;
+		 nombrefantasia.readOnly = false;
+		 
+		 primernombre.readOnly    = true;
+	     segundonombre.readOnly   = true;
+	     apellidopaterno.readOnly = true;
+	     apellidomaterno.readOnly = true; 
+		 
 	  }
 	  else {
-		 document.getElementById("primernombre").value="";
-		 document.getElementById("segundonombre").value="";
-		 document.getElementById("apellidopaterno").value="";
-		 document.getElementById("apellidomaterno").value="";
+		 
+		 razonsocial.value    = null;
+         nombrefantasia.value = null;
+		 
+         razonsocial.readOnly    = true;
+		 nombrefantasia.readOnly = true;
+		 
+		 primernombre.readOnly    = false;
+	     segundonombre.readOnly   = false;
+	     apellidopaterno.readOnly = false;
+	     apellidomaterno.readOnly = false; 		 
 	  }
    }
    

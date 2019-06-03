@@ -1,11 +1,7 @@
 <?=$this->Form->create($gre, ["class" => "form-horizontal", 'url' => '/BitacorasCambiosPrecios/index', 'novalidate' => true]);?>
 <?php echo $this->BForm->formHeader( 'Bitácora de Cambios de Precios' ); ?>
 
-<div class="col-md-4 text-center btn-vars__showcase">
-   <div class="btn-group block">
-      <a href="<?=$this->request->webroot?>BitacorasCambiosPrecios/add" title='Nuevo registro' class="btn dark"><i class="pe-7s-plus"></i>&nbsp; Nuevo</a>
-   </div>
-</div>
+
 <?php echo $this->BForm->initForm( 'Bitácora de Cambios de Precios',array(
         $this->Paginator->sort('cod_prod_alfanum', 'Producto'),
         $this->Paginator->sort('nombre', 'Descripción'),

@@ -208,7 +208,7 @@
                         $nombre = $c->getProp("name", "NONAME");
 						
 						if ($name."2"==$nombre) {
-						   $valor = $c->getProp("value", "");
+						   $valor = $this->rows[$i][$name."2"];		
 						   $encontrado=true;
 						   break;
 						}
@@ -365,6 +365,7 @@
 		$mueve_a_inputs_e="";
 		$n=0;
 		$inicializa_con_es="";
+        $inicializa_con_es2="";
 		$req_fields="";
 		
 		$max_len=0;
@@ -421,9 +422,8 @@
 				 $align=" align='right'";
 			  else
 				 $align="";
-			 
-			  
-			  if ($gadget=="select") { 
+		    
+              if ($gadget=="select") { 
 			     $setea_variables .= "v = document.getElementById('$field').value;\n";
 			     $setea_variables .= "l = document.getElementById('$field');\n";
 				 $setea_variables .= "for (i=0; i < l.length; i++) {\n".
@@ -436,7 +436,7 @@
 				 
 				 $valores_td .= "		                 \"<td class='fondoCelda'$align>\"+l$field+\"</td>\"+\n";
 		      }
-	          else
+	          else 
  		         $valores_td .= "		                 \"<td class='fondoCelda'$align>\"+$name+\"</td>\"+\n";
 			  
 		   }
@@ -444,6 +444,7 @@
 		   $mueve_a_inputs_e .="		 document.getElementById(\"$name\"       ).value = e[$n];\n";
 		   
 		   $inicializa_con_es .= "			".str_pad($name, $max_len)." = e[$n];\n";
+           $inicializa_con_es2 .= "			".str_pad($name, $max_len)." = e[$n];\n";
 		   if ($gadget=="select") {
 			  $inicializa_con_es .= "l = document.getElementById('$name');\n";
 			  $inicializa_con_es .= "for (i=0; i < l.length; i++) {\n".
@@ -485,6 +486,8 @@
 			      $actualiza_sums .= "      $ss = $ss*1.0 + $name*1.0;\n";
 			}
 		}
+
+        //echo $valores_td."<hr/>";
 		
 		$layout = str_replace('{{inicializa}}',        $inicializa       , $layout);
 		$layout = str_replace('{{firstField}}',        $firstField       , $layout);
@@ -493,6 +496,7 @@
 		$layout = str_replace('{{valores_td}}',        $valores_td       , $layout);
 		$layout = str_replace('{{mueve_a_inputs_e}}',  $mueve_a_inputs_e , $layout);
 		$layout = str_replace('{{inicializa_con_es}}', $inicializa_con_es, $layout);
+        $layout = str_replace('{{inicializa_con_es2}}', $inicializa_con_es2, $layout);
 		$layout = str_replace('{{ini_sums}}'         , $ini_sums         , $layout);
 		$layout = str_replace('{{actualiza_sums}}'   , $actualiza_sums   , $layout);
 		$layout = str_replace('{{sums_a_totales}}'   , $sums_a_totales   , $layout);

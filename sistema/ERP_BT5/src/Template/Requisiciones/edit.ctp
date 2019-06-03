@@ -159,6 +159,8 @@ $("#nombre").focus();
 	  document.getElementById("desservicio").selectedIndex=0;
 	  
 	  document.getElementById("otroinsumo").value="";
+
+      document.getElementById("idunms").value="";
 	  
 	  document.getElementById("producto").focus();
 		 
@@ -176,6 +178,8 @@ $("#nombre").focus();
 	  document.getElementById("desproducto").selectedIndex=0;
 	  
 	  document.getElementById("otroinsumo").value="";
+
+      document.getElementById("idunmp").value="";
 	  
 	  document.getElementById("idserv").focus();
 		 
@@ -192,6 +196,9 @@ $("#nombre").focus();
 	  document.getElementById("producto").value = "";
 	  document.getElementById("idprod").value = "";
 	  document.getElementById("desproducto").selectedIndex=0;
+
+      document.getElementById("idunmp").value="";
+      document.getElementById("idunms").value="";
 	  
 	  document.getElementById("cantidad").focus();
 		 
@@ -239,27 +246,29 @@ $("#nombre").focus();
       if (idprod.value=="" || idprod.value.length!=8)
          return;		  
 	  
-//	  //Chequeamos que el producto no este repetido
-//      nVeces=0;
-//	  
-//	  tabla = document.getElementById("mitabla");
-//	  
-//	  for (i=2; i < tabla.rows.length; i++) {
-//         data = document.getElementById("data"+i).value;
-//
-//         e    = data.split("|");
-//		 
-//		 if (idprod.value==e[0]) nVeces++;
-//
-//         //alert(e[0]);		 
-//	  }
-//	  
-//	  if (nVeces > 0) {
-//		 //Ya ha sido ingresado
-//		 alert("Producto: '"+idprod.value+"' ya ha sido ingresado!");
-//		 idprod.value="";
-//		 return;
-//	  }
+	  //Chequeamos que el producto no este repetido
+      nVeces=0;
+	  
+	  tabla = document.getElementById("mitabla");
+	  
+	  for (i=2; i < tabla.rows.length; i++) {
+         data = document.getElementById("data"+i).value;
+
+         e    = data.split("|");
+		 
+		 if (idprod.value==e[0]) nVeces++;
+
+         //alert(e[0]);		 
+	  }
+	  
+	  if (nVeces > 0) {
+		 //Ya ha sido ingresado
+		 alert("Producto: '"+idprod.value+"' ya ha sido ingresado!");
+		 idprod.value="";
+         document.getElementById("desproducto").selectedIndex=0;
+         document.getElementById("idunmp").value="";
+		 return;
+	  }
 	  
 	  $.ajax({
          url: "<?=$this->request->webroot?>Requisiciones/chkIdprod/"+idempr+"/"+idprod.value,
@@ -297,8 +306,6 @@ $("#nombre").focus();
    
    document.getElementById("idserv").onblur = function() {  
 	  idserv = this.value;
-	    
-	  //alert(idbode);
 	  
       if (idserv=="" || idserv.length<=0)
          return;		  
@@ -308,27 +315,32 @@ $("#nombre").focus();
 		 return;
 	  }
 	  
-//	  //Chequeamos que el producto no este repetido
-//      nVeces=0;
-//	  
-//	  tabla = document.getElementById("mitabla");
-//	  
-//	  for (i=2; i < tabla.rows.length; i++) {
-//         data = document.getElementById("data"+i).value;
-//
-//         e    = data.split("|");
-//		 
-//		 if (idprod.value==e[0]) nVeces++;
-//
-//         //alert(e[0]);		 
-//	  }
-//	  
-//	  if (nVeces > 0) {
-//		 //Ya ha sido ingresado
-//		 alert("Producto: '"+idprod.value+"' ya ha sido ingresado!");
-//		 idprod.value="";
-//		 return;
-//	  }
+	  //Chequeamos que el producto no este repetido
+      nVeces=0;
+	  
+	  tabla = document.getElementById("mitabla");
+	  
+	  for (i=2; i < tabla.rows.length; i++) {
+         data = document.getElementById("data"+i).value;
+
+         e    = data.split("|");
+
+         //alert(e[4]+", "+this.value);
+         
+		 
+		 if (this.value==e[4]) nVeces++;
+
+         //alert(e[0]);		 
+	  }
+	  
+	  if (nVeces > 0) {
+		 //Ya ha sido ingresado
+		 alert("Servicio: '"+this.value+"' ya ha sido ingresado!");
+		 this.value="";
+         document.getElementById("desservicio").selectedIndex=0;
+         document.getElementById("idunms").value="";
+		 return;
+	  }
 	  
 	  $.ajax({
          url: "<?=$this->request->webroot?>Requisiciones/chkIdserv/"+idserv,

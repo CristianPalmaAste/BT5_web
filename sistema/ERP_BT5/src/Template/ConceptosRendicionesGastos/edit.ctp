@@ -29,14 +29,14 @@
       </header>
 
       <div class="widget__content">
-<?=$this->Form->text("id", ["size" => 10, "maxlength" => 20, "class" => "stacked-input upper", "id" => "id", 'placeholder' => 'Id*', 'readonly' => true]);?>
-</td></tr>
+<?=$this->Form->hidden("id");?>
+
          <?=$this->Form->hidden("idgrem", ["id" => "idgrem"])?>
-</td></tr>
-<?=$this->Form->text("descripcion", ["size" => 10, "maxlength" => 500, "class" => "stacked-input upper", "id" => "descripcion", 'placeholder' => 'Descripción*']);?>
-</td></tr>
-<?=$this->Form->select("idcuco", $cuentas_contables, ["class" => "stacked-input", "id" => "idcuco", 'placeholder' => 'Cuenta Contable*', 'style' => 'color:black;']);?>
-</td></tr>
+
+<?=$this->Form->text("descripcion", ["size" => 10, "maxlength" => 500, "class" => "stacked-input upper", "id" => "descripcion", 'placeholder' => 'Descripción*', 'required' => true]);?>
+
+<?=$this->Form->select("idcuco", $cuentas_contables, ["class" => "stacked-input", "id" => "idcuco", 'placeholder' => 'Cuenta Contable*', 'style' => 'color:black;', 'required' => true]);?>
+
 
 <?= $this->Form->button(__('Guardar')) ?>
 </div>

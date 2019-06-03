@@ -72,6 +72,37 @@
 $("#idpais").focus();
 
    rut=document.getElementById("identificador1");
+   
+   primernombre    = document.getElementById("primernombre"   );
+   segundonombre   = document.getElementById("segundonombre"   );
+   apellidopaterno = document.getElementById("apellidopaterno");
+   apellidomaterno = document.getElementById("apellidomaterno");
+   razonsocial     = document.getElementById("razonsocial");
+   nombrefantasia  = document.getElementById("nombrefantasia");
+   
+   if (document.getElementById("idtipp").value!=1) {
+      
+      
+      razonsocial.readOnly    = false;
+      nombrefantasia.readOnly = false;
+      
+      primernombre.readOnly    = true;
+      segundonombre.readOnly   = true;
+      apellidopaterno.readOnly = true;
+      apellidomaterno.readOnly = true; 
+      
+   }
+   else {
+      
+      
+      razonsocial.readOnly    = true;
+      nombrefantasia.readOnly = true;
+      
+      primernombre.readOnly    = false;
+      segundonombre.readOnly   = false;
+      apellidopaterno.readOnly = false;
+      apellidomaterno.readOnly = false; 		 
+   }
 
    //alert(rut.value);
 
@@ -95,15 +126,35 @@ $("#idpais").focus();
 	  razonsocial     = document.getElementById("razonsocial");
 	  nombrefantasia  = document.getElementById("nombrefantasia");
 	  
-	  if (this.value==1) {
-		 razonsocial.value    = null;
-		 nombrefantasia.value = null;
+	  //alert(this.value);
+	  
+	  if (this.value!=1) {
+		 primernombre.value    = null;
+         segundonombre.value   = null;
+         apellidopaterno.value = null;
+         apellidomaterno.value = null;
+ 
+		 razonsocial.readOnly    = false;
+		 nombrefantasia.readOnly = false;
+		 
+		 primernombre.readOnly    = true;
+	     segundonombre.readOnly   = true;
+	     apellidopaterno.readOnly = true;
+	     apellidomaterno.readOnly = true; 
+		 
 	  }
 	  else {
-		 primernombre.value    = null;
-	     segundonombre.value   = null;
-	     apellidopaterno.value = null;
-	     apellidomaterno.value = null; 
+		 
+		 razonsocial.value    = null;
+         nombrefantasia.value = null;
+		 
+         razonsocial.readOnly    = true;
+		 nombrefantasia.readOnly = true;
+		 
+		 primernombre.readOnly    = false;
+	     segundonombre.readOnly   = false;
+	     apellidopaterno.readOnly = false;
+	     apellidomaterno.readOnly = false; 		 
 	  }
    }
 

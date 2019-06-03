@@ -1,24 +1,5 @@
-<?= $this->Form->create($gre) ?>
+<?=$this->Form->create($gre);?>
  
-<?php if (count($errors) > 0) {
-?>
-<div class="row" style="padding-bottom:5px;">
-   <div class="col-sm-9">
-   <div class="panel panel-danger">
-      <div class="panel-heading">Errores</div>
-
-<?php
-
-   foreach($errors as $key => $arr)
-      foreach($arr as $k => $v)
-          echo "<div class='panel-body'>$v</div>";
-?>
-      </div>
-    <div>
-</div>
-<?php      }
-?>
-
  
 <div class="col-md-8">
    <article class="widget widget__form">

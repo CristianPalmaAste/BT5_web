@@ -70,7 +70,7 @@ if ($gre->nombre!=null) $cond["nombre like"] = $gre->nombre."%";
 
        $this->set('gre', $gre);
 	   
-	   
+	   $this->render("edit");
     }
 
     public function edit($id=null) {

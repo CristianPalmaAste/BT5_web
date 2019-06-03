@@ -31,12 +31,13 @@
       <div class="widget__content">
          <?=$this->Form->hidden("id")?>
          <label for="idfapr" class="stacked-label"><i data-toggle="tooltip" title="Nombre Familia" class="pe-7s-menu" ></i></label>
-         <?=$this->Form->select("idfapr", $familias_productos, ["class" => "stacked-input", "id" => "idfapr", 'placeholder' => 'Familia*', 'style' => 'width: calc(100% - 65px);display: inline-block;height: 65px;text-color:rgb(255,255,255);background-color:rgba(0, 0, 0, 0.25);clear:right;']);?>
+         <?=$this->Form->select("idfapr", $familias_productos, ["class" => "stacked-input", "id" => "idfapr", 'placeholder' => 'Familia*', 'style' => 'width: calc(100% - 65px);display: inline-block;height: 65px;text-color:rgb(255,255,255);background-color:rgba(0, 0, 0, 0.25);clear:right;', 'required' => true]);?>
          <label for="cod_sub_familia" class="stacked-label"><i data-toggle="tooltip" title="Código Sub Familia" class="pe-7s-note" ></i></label>
          <?=$this->Form->text("cod_sub_familia", ["size" => 10, "maxlength" => 2, "class" => "stacked-input upper", "id" => "cod_sub_familia", 'placeholder' => 'Código*']);?>
          <label for="descripcion" class="stacked-label"><i data-toggle="tooltip" title="Nombre Sub Familia" class="pe-7s-note" ></i></label>
          <?=$this->Form->text("descripcion", ["size" => 10, "maxlength" => 100, "class" => "stacked-input upper", "id" => "descripcion", 'placeholder' => 'Descripción*']);?>
-
+		 <label for="idcuco" class="stacked-label"><i data-toggle="tooltip" title="Cuenta Contable" class="pe-7s-note" ></i></label>
+         <?=$this->Form->select("idcuco", $cuentas_contables, ["class" => "stacked-input", "id" => "idcuco", 'placeholder' => 'Cuenta Contable*', 'style' => 'color:black;', 'required' => true,'style' => 'width: calc(100% - 65px);display: inline-block;height: 65px;text-color:rgb(255,255,255);background-color:rgba(0, 0, 0, 0.25);clear:right;']);?>
 <?= $this->Form->button(__('Guardar')) ?>
 </div>
 

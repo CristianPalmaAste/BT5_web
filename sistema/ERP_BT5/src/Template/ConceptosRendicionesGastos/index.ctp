@@ -7,7 +7,7 @@
    </div>
 </div>
 <?php echo $this->BForm->initForm( 'Conceptos de Rendiciones y Gastos',array(
-        $this->Paginator->sort('id', 'Id'),
+        //$this->Paginator->sort('id', 'Id'),
         $this->Paginator->sort('descripcion', 'Descripción'),
         $this->Paginator->sort('idcuco', 'Cuenta Contable'),
             'Acciones'
@@ -23,9 +23,13 @@
 <?php foreach($registros as $g):?>
 
       <tr>
-         <td><?=h($g->id)?></td>
+         <!--<td><?=h($g->id)?></td>-->
          <td><?=h($g->descripcion)?></td>
-         <td><?=h($cuentas_contables[$g->idcuco])?></td>
+         <td><?php
+		         if (isset($cuentas_contables[$g->idcuco])) 
+					echo h($cuentas_contables[$g->idcuco]);
+			  ?>
+		 </td>
          <td align='center'>
             <?= $this->Html->link('<i class="pe-7s-look"></i>', ['action' => 'view', $g->id],array('escape' => false, 'title' => 'Ver')) ?>
             <?= $this->Html->link('<i class="pe-7s-note"></i>', ['action' => 'edit', $g->id],array('escape' => false, 'title' => 'Editar')) ?>

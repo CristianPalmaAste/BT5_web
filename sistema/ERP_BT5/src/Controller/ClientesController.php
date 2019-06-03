@@ -57,6 +57,8 @@ class ClientesController extends AppController
     }
 
     public function add() {
+	   $this->render("edit");
+	   
        $session = $this->request->session();
 
        $gre = $this->Clientes->newEntity();
@@ -81,6 +83,8 @@ class ClientesController extends AppController
 	     $this->Flash->error(__('No se puede crear registro.'));
 
 	   }
+	   else
+		  $gre->idticl = 1;
 
        $gre->idgrem = $session->read("idgrem");
        //$gre->idempr = $session->read("idempr");
@@ -111,6 +115,8 @@ class ClientesController extends AppController
         $this->set("rubros", $rubro->obtRubros($session->read("idgrem")));
         $this->set("gemp"  , $gemp->obtGruposEmpresariales());
         */
+		
+		$this->render("edit");
     }
 
     public function edit($id=null) {

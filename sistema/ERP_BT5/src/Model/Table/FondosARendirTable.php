@@ -8,7 +8,7 @@ use Cake\Network\Session;
 
 class FondosARendirTable extends Table
 {
-    public $_seq='';
+    public $_seq='fore_seq';
 
     public function initialize(array $config)
     {

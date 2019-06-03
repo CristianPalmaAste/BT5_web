@@ -24,31 +24,32 @@
 		 
 		 if (currentRow=="") {
 		    nRow = tbl.rows.length;
-		    var row = tbl.insertRow(nRow);
+		    var row = tbl.insertRow(-1);
 		 }
 		 else {
 			nRow = currentRow;
 			var row = tbl.rows[nRow];
 		 }
+
+         //if (row==null) alert("row viene nulo");
 		    
  	     {{setea_variables}}
 		 
 		 data = {{data}};
 		 		   		 
-    	 row.innerHTML = "<tr><input type='hidden' id='data"+nRow+"' value='"+data+"'/>"+
+    	 row.innerHTML = "<input type='hidden' id='data"+nRow+"' value='"+data+"'/>"+
     		                 {{valores_td}}
       						 "<td class='fondoCelda'><input type='button' value='Edit' onclick='javascript:editar("+nRow+")' class='btn btn-default'/>&nbsp;"+
     						 "<input type='button' value='Del' onclick='javascript:eliminar("+nRow+")' class='btn btn-default'/></td>"+
-    	                     "</tr>";
-    		
-		 //alert(row.innertHTML);
-			 
+    	                     "";
+
     	 despeja();
     		 
     	 document.getElementById("currentRow").value="";
     		 
     	 switchButtons("on");
 			 
+
 		 updateTotals();		 
 	  }
 	  
@@ -124,7 +125,7 @@
 		    data = document.getElementById("data"+i).value;
 			
 			e = data.split("|");
-			{{inicializa_con_es}}
+			{{inicializa_con_es2}}
 						
 			{{actualiza_sums}}
 		 }

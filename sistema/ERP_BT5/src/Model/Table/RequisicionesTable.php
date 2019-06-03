@@ -46,12 +46,12 @@ class RequisicionesTable extends Table
           $entity->id = $id[0]['id'];                                    
           $entity->idusuacrearegistro = $idusua;                         
           $entity->fechacrearegistro = date('ymd His');              
-          Log::write("debug", debug($entity));		  
+          //Log::write("debug", debug($entity));		  
           return $entity;                                                 
        }else{                                                              
           $entity->idusuamodifregistro = $idusua;                        
           $entity->fechamodifregistro = date('ymd His');
-		  Log::write("debug", debug($entity));		  
+		  //Log::write("debug", debug($entity));		  
           return $entity;
        }
     }

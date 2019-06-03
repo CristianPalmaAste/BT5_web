@@ -61,8 +61,12 @@ class SubFamiliasProductosController extends AppController
     }
 
     public function add() {
+	   $this->render("edit");
+	   
        $session = $this->request->session();
        $idempr = $session->read("idempr");
+       $idgrem = $session->read("idgrem");
+
 	   
        $gre = $this->SubFamiliasProductos->newEntity();
 
@@ -91,11 +95,16 @@ class SubFamiliasProductosController extends AppController
        $this->set('gre', $gre);
 	   
 	   $this->llena_lista('familias_productos', 'descripcion', $idempr);
+	   
+	   $this->llena_cuentas($idgrem);
+	   
+	   $this->render("edit");
     }
 
     public function edit($id=null) {
        $session = $this->request->session();
 	   $idempr = $session->read("idempr");
+	   $idgrem = $session->read("idgrem");
 	   
        $gre = $this->SubFamiliasProductos->get($id);
 
@@ -120,6 +129,7 @@ class SubFamiliasProductosController extends AppController
 	   $this->set('gre', $gre);
 	   
 	   $this->llena_lista('familias_productos', 'descripcion', $idempr);
+	   $this->llena_cuentas($idgrem);
     }
 
     public function view($id=null) {
@@ -161,13 +171,25 @@ class SubFamiliasProductosController extends AppController
 	   
 	   $l=[];
 	   
-	   $l[] = "";
+	   $l[""] = "";
 	   foreach($lst as $r)
 	      $l[$r["id"]] = $r[$fld];
 	   
 	   $this->set($tbl, $l);
 	   
 	}
+	
+	public function llena_cuentas($idgrem) {
+       $tabla = TableRegistry::get("cuentas_contables");
+	   
+	   $lst = $tabla->find('all')->where(["idgrem" => $idgrem, "imputable" => "S"])->order("descripcion");
+	      
+	   $l[""] = "";
+	   foreach($lst as $r)
+	      $l[$r["id"]] = $r["descripcion"];
+	   
+	   $this->set("cuentas_contables", $l);	
+    }	
 
     public function excel() {
        header('Content-Type: text/csv; charset=utf-8');

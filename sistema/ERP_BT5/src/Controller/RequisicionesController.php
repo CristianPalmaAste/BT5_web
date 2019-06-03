@@ -259,6 +259,8 @@ class RequisicionesController extends AppController
 	   
 	   $grid->addCol(["name" => "cantidad"            , "caption" => "Cantidad",        "size" => 8,  "type" => "N", "required" => true, "class" => "upper"]);
 	   
+       $grid->addCol(["name" => "desproducto2"        , "gadget" => "hidden"]);	   
+       $grid->addCol(["name" => "desservicio2"        , "gadget" => "hidden"]);	   
 	   return $grid;
 	}
 
@@ -363,7 +365,11 @@ class RequisicionesController extends AppController
 		  
 	   $this->set("usuarios", $l);
 	   
-	   $sql = "select *, '' producto, '' desproducto, '' desservicio from detalles_requisiciones where idrequ=$id order by correlativo";
+       $productos = TableRegistry::get("Productos");
+       $servv = TableRegistry::get("Servv");
+
+	   $sql = "select *, '' producto, '' desproducto, '' desservicio, '' desproducto2, '' desservicio2 ".
+              "from detalles_requisiciones where idrequ=$id order by correlativo";
 
 	   $stmt = $conn->execute($sql);
 
@@ -381,6 +387,8 @@ class RequisicionesController extends AppController
           if (!isset($results[$i]["idunms"]     )) $results[$i]["idunms"]     ="";
           if (!isset($results[$i]["otroinsumo"] )) $results[$i]["otroinsumo"] ="";
           if (!isset($results[$i]["cantidad"]   )) $results[$i]["cantidad"]   ="";
+          if (!isset($results[$i]["desproducto2"]   )) $results[$i]["desproducto2"]   ="";
+          if (!isset($results[$i]["desservicio2"]   )) $results[$i]["desservicio2"]   ="";
 		  
 		  $producto     = isset($results[$i]["producto"])   ?$results[$i]["producto"]:"";
 	      $idprod       = isset($results[$i]["idprod"])     ?$results[$i]["idprod"]:"";
@@ -391,8 +399,10 @@ class RequisicionesController extends AppController
           $idunms       = isset($results[$i]["idunms"])     ?$results[$i]["idunms"]     :"";
           $otroinsumo   = isset($results[$i]["otroinsumo"]) ?$results[$i]["otroinsumo"] :"";
           $cantidad     = isset($results[$i]["cantidad"])   ?$results[$i]["cantidad"]:"";
+
+          //echo $idprod.",".$idserv."<br/>";
 	   
-		  if ($idprod!="") {
+		  if ($idprod!=null) {
 			 $sql = "select * from prodv where id=$idprod";
 			 
 			 $stmt = $conn->execute($sql);
@@ -402,18 +412,29 @@ class RequisicionesController extends AppController
 			 $results[$i]["producto"]    = $r[0]["familia"].$r[0]["sub_familia"].$r[0]["producto"];
 			 $results[$i]["idunmp"]      = $r[0]["alias_unidad_de_medida"];
 			 $results[$i]["desproducto"] = $results[$i]["producto"]."#".$idprod;
+             $results[$i]["desproducto2"] = $r[0]["nombre"];
+             $results[$i]["desservicio2"] = "";
 			 
 		  }
-		  else if ($idserv!="") {
+		  else if ($idserv!=null) {
 			 $results[$i]["idserv"]      = $idserv;
 			 $results[$i]["desservicio"] = $idserv;
-			 $results[$i]["idunms"]      = "C/U";			 
+			 $results[$i]["idunms"]      = "C/U";		
+
+             $sql = "select * from servv where id=$idserv";
+
+	         $stmt = $conn->execute($sql);
+
+             $results2 = $stmt ->fetchAll('assoc');
+
+             $results[$i]["desservicio2"] = $results2[0]["nombre"];	 
+             $results[$i]["idunmps"] = $results2[0]["alias_unidad_medida_servicio"];
+             $results[$i]["desproducto2"] = "";
 		  }
 
 	   }
-	   
-	   
-	   
+
+       //print_r($results);
 	   
 	   $grid = $this->setGrid($results);
 	   
@@ -728,7 +749,7 @@ class RequisicionesController extends AppController
 	    foreach($filas as $data) {
 		   $e = explode("|", $data);
 		   
-		   print_r($e); echo "<hr/>";
+		   //print_r($e); echo "<hr/>";
 		   		   
 		   $producto    = $e[0];
 		   $idprod      = $e[1];

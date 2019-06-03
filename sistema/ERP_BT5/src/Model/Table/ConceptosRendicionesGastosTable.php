@@ -8,7 +8,7 @@ use Cake\Network\Session;
 
 class ConceptosRendicionesGastosTable extends Table
 {
-    public $_seq='';
+    public $_seq='corg_seq';
 
     public function initialize(array $config)
     {

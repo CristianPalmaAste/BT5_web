@@ -265,7 +265,7 @@ class DocumentosLegalesController extends AppController{
        $registro->idusuaborraregistro = $session->read("idusua");
        $registro->fechaborraregistro  = date('Y-m-d H:i:s');	
 	   
-	   print_r($registro); 
+	   //print_r($registro); 
 
 	   try {
           $this->DocumentosLegales->save($registro);
