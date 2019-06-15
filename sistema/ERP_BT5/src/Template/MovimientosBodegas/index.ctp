@@ -21,6 +21,7 @@
 <td><?=$this->Form->text("descripcion", ["size" => 20, "maxlength" => 100, "class" => "stacked-input upper", "id" => "descripcion"]);?></td>
 <td align='center'><button type='submit' class='btn btn-default'>Filtrar</button>/<?=$this->Html->link('Limpiar', ['action' => 'index'])?></td>
 </tr>-->
+
 <?php foreach($registros as $g):?>
 
       <tr>

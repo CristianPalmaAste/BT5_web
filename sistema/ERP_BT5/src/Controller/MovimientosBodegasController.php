@@ -14,77 +14,57 @@ class MovimientosBodegasController extends AppController
 {
     public function index()
     {
+		$this->render("edit");
         $session = $this->request->session();
         $idempr = $session->read("idempr");
 
-		$bodev = TableRegistry::get("bodev");
+		$mobo = TableRegistry::get("mobov_dembv");
 		
-        $gre = $bodev->newEntity();
-        
-        if ($this->request->is('post')) {
-           $gre = $bodev->patchEntity($gre, $this->request->data);
-        }             
-
-        $this->set("gre", $gre);
-        $cond = [];
-        //$cond["idusuaborraregistro is"] = null;
-		$cond["idempr"] = $idempr;
-        
-       
-
-        if ($gre->id!=null) $cond["id"] = $gre->id;
-        if ($gre->idbode!=null) $cond["idbode"] = $gre->idbode;
-        if ($gre->correlativo!=null) $cond["correlativo"] = $gre->correlativo;
-        if ($gre->idtimb!=null) $cond["idtimb"] = $gre->idtimb;
-        if ($gre->fechamovto!=null) $cond["fechamovto like"] = $gre->fechamovto."%";
-        if ($gre->descripcion!=null) $cond["descripcion like"] = $gre->descripcion."%";
-
- 
-        $movtos = $this->paginate($bodev->find('all')->where($cond));
-
-        $this->set("registros", $movtos); 
-        $this->llena_lista('bodegas', 'nombre');
-        $this->llena_lista('tipos_movimientos_bodegas', 'descripcion');
-    }
-
-
-    public function view($id=null) {
-       $session = $this->request->session();
-       $idempr = $session->read("idempr");
-
-	   $bodega = TableRegistry::get("Bodegas");
-	   
-	   /*
-	   $conn = ConnectionManager::get('default');
-	   
-	   $sql = "select * from mobov where idbode=$id";
-	   
-	   $stmt = $conn->execute($sql);
-
-       $results = $stmt ->fetchAll('assoc');
-	   
-       $this->set("errors", []); 
-	   
-	   $this->set("registros", $results);
-        */
-       
-	   
-	   $bodev = TableRegistry::get("mobov");
-	  
-	   $registros = $this->paginate($bodev->find('all')->where(["idbode" => $id])->order("fecha_movto desc"));
-	   
-	   $this->set("registros", $registros);
+		$gre = $mobo->newEntity();
 		
-       //$gre = $bodev->newEntity();
-	   
-	   $gre = $bodega->get($id);
-	   $this->set('gre', $gre);
-
-    }
-    
-  
+		$cond=[];
+		$cond=["idempr" => $idempr];
+		
+		if ($this->request->is('post')) {
+		   $gre = $mobo->patchEntity($gre, $this->request->data);
+		   
+		   $cond["cod_prod_alfanum"] = $gre->producto;
+		   if ($gre->idbode!="") $cond["idbode"] = $gre->idbode;
+		}
+		else {
+		   $gre->producto="";
+		   $gre->idbode="";
+		   $gre->fecini=date("Y-m-d");
+		   $gre->fecfin=date("Y-m-d");
+		   
+		   $cond["cod_prod_alfanum"]="XXXXXXXX";
+		}
+		
+        $this->set("gre", $gre); 
+		$this->set("grilla", ""); 
+		$this->set("idprod", ""); 
+        $this->llena_lista('bodegas', 'nombre', true);
+		$this->llena_productos('prodv',   'nombre', true);
+        //$this->llena_lista('tipos_movimientos_bodegas', 'descripcion');
+		
+		
+		
+	    $cond["fecha_movto >="] = $gre->fecini;
+		$cond["fecha_movto <="] = $gre->fecfin;
 	
+	    //print_r($cond);
+		
+		$Requisiciones = $this->paginate($mobo->find('all')->where($cond));
+
+        $this->set("registros", $Requisiciones); 
+		
+		$this->render("edit");
+    }
+
 	public function llena_lista($tbl, $fld, $fEmpty=true) {
+	   $session = $this->request->session();
+       $idempr = $session->read("idempr");
+	   
 	   $l = explode("_", $tbl);
 	   
 	   $t = "";
@@ -93,13 +73,37 @@ class MovimientosBodegasController extends AppController
 		  
 	   $tabla = TableRegistry::get($t);
 	   
-	   $lst = $tabla->find('all')->order($fld);
+	   $lst = $tabla->find('all')->where(["idempr" => $idempr])->order($fld);
 	   
 	   $l=[];
 	   
-	   if ($fEmpty) $l[] = "";
+	   if ($fEmpty) $l[""] = "";
 	   foreach($lst as $r)
 	      $l[$r["id"]] = $r[$fld];
+	   
+	   $this->set($tbl, $l);
+	   
+	}
+	
+	public function llena_productos($tbl, $fld, $fEmpty=true) {
+	   $session = $this->request->session();
+       $idempr = $session->read("idempr");
+	   
+	   $l = explode("_", $tbl);
+	   
+	   $t = "";
+	   foreach($l as $p)
+	      $t .= ucfirst(strtolower($p));
+		  
+	   $tabla = TableRegistry::get($t);
+	   
+	   $lst = $tabla->find('all')->where(["idempr" => $idempr])->order("cod_prod_alfanum");
+	   
+	   $l=[];
+	   
+	   if ($fEmpty) $l[""] = "";
+	   foreach($lst as $r)
+	      $l[$r["cod_prod_alfanum"]."-".$r["id"]] = $r[$fld];
 	   
 	   $this->set($tbl, $l);
 	   
@@ -150,6 +154,8 @@ class MovimientosBodegasController extends AppController
 
        $this->viewBuilder()->layout('custom');
     }
+	
+	
 
     
 }
