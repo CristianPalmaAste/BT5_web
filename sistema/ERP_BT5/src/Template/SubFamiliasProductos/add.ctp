@@ -53,4 +53,26 @@
 
 <script language="javascript">
 $("#nombre").focus();
+
+// Restricts input for each element in the set of matched elements to the given inputFilter.
+(function($) {
+  $.fn.inputFilter = function(inputFilter) {
+    return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+      if (inputFilter(this.value)) {
+        this.oldValue = this.value;
+        this.oldSelectionStart = this.selectionStart;
+        this.oldSelectionEnd = this.selectionEnd;
+      } else if (this.hasOwnProperty("oldValue")) {
+        this.value = this.oldValue;
+        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+      }
+    });
+  };
+}(jQuery));
+
+$(document).ready(function() {
+  // Restrict input to digits by using a regular expression filter.
+  $("#cod_sub_familia").inputFilter(function(value) {
+    return /^\d*$/.test(value);
+  });
 </script>

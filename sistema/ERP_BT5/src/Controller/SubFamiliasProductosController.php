@@ -98,6 +98,8 @@ class SubFamiliasProductosController extends AppController
 	   
 	   $this->llena_cuentas($idgrem);
 	   
+	   $this->set("accion", "add");
+	   
 	   $this->render("edit");
     }
 
@@ -130,6 +132,8 @@ class SubFamiliasProductosController extends AppController
 	   
 	   $this->llena_lista('familias_productos', 'descripcion', $idempr);
 	   $this->llena_cuentas($idgrem);
+	   
+	   $this->set("accion", "edit");
     }
 
     public function view($id=null) {

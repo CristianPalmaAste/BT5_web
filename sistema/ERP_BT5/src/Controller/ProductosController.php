@@ -178,15 +178,29 @@ if ($gre->idesre!=null) $cond["idesre"] = $gre->idesre;
 	}
 	
 	function llenaFamilias($idempr) {
-	   $fam  = TableRegistry::get('familias_productos');
+	   //$fam  = TableRegistry::get('familias_productos');
 	   
 	   $f=[];
-	   $r = $fam->find('all')->where(['idempr' => $idempr])->order(["descripcion"]);
+	   //$r = $fam->find('all')->where(['idempr' => $idempr])->order(["descripcion"]);
 	   
 	   //print_r($r);
 	   
+	   $conn = ConnectionManager::get('default');
+
+	   $sql = "select * 
+	           from   familias_productos 
+			   where  idempr=$idempr 
+			   and    id in (select idfapr from sub_familias_productos)
+			   and    idusuaborraregistro is null
+			   order by descripcion";
+   
+	   $stmt = $conn->execute($sql);
+
+       $results = $stmt ->fetchAll('assoc');
+		 
+	   
 	   $f[""]="";
-	   foreach($r as $s)
+	   foreach($results as $s)
 	      $f[$s["id"]] = $s["descripcion"];	   
 		  
 	   $this->set("familias_productos", $f);

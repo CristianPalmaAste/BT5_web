@@ -94,40 +94,90 @@ class UsuariosController extends AppController{
 	  
 	  //Aquí van las inicializaciones
    }
+   
+   function countRows($r) {
+	  $cuenta=0;
+	  
+	  foreach($r as $rr) 
+	     $cuenta++;
+		 
+      return $cuenta;
+   }
+   
+   function randomPassword() {
+      $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+      $pass = array(); //remember to declare $pass as an array
+      $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+      for ($i = 0; $i < 8; $i++) {
+          $n = rand(0, $alphaLength);
+          $pass[] = $alphabet[$n];
+      }
+      return implode($pass); //turn the array into a string
+   }
 
    public function recupContra() {
       $this->set('title', 'Cambio de Contraseña');
       $this->set("errores", []);
 
+
+	  $persona  = TableRegistry::get('Personas'); 
+	  $usuario  = TableRegistry::get('Usuarios'); 
+	  
       $usuario = $this->Usuarios->newEntity();
       if ($this->request->is('post')) {
-         $usuario = $this->Usuarios->patchEntity($usuario, $this->request->data);
+		 $found=false;
+		 
+		 $username=htmlspecialchars($_REQUEST["username"], ENT_QUOTES);
+		 
+		 $conn = ConnectionManager::get('default');
 
-         $usuario->username=strtoupper($usuario->username);
+         $sql = "select u.id idusua, p.id idpers 
+		         from usuarios u, personas p
+				 where u.idpers=p.id
+				 and (upper(p.email)='$username' or u.username='$username')
+				";
+				
+		 //echo $sql."<hr>";
 
+         $stmt = $conn->execute($sql);
 
-         $arr=$this->Usuarios->find('all')->where(["username" => $usuario->username]);
+         $results = $stmt ->fetchAll('assoc');
 
-         foreach($arr as $r) {
-            print_r($r);
-
+		 		 
+		 if (count($results) > 0) {		
+        	//Recupero datos persona
+			$idpers=$results[0]["idpers"];
+			$idusua=$results[0]["idusua"];
+			$newpass = $this->randomPassword();
+			
+		    //echo "idpers: $idpers<br/>";
+			
+			$sql = "update usuarios set password='$newpass' where id=$idusua";
+			
+            $stmt = $conn->execute($sql);
+			
+        	$rr = $persona->get($idpers);
+        	 
+			try {				
             $email = new Email('default');
-            $email->from(['solar2design@gmail.com' => 'My Site'])
-            ->to('vchilem@gmail.com')
-            ->subject('Recuperación de Contraseña')
-            ->send('My message');
+            $email->from(['bt5@bt5.cl' => 'BT5'])
+               ->to($rr->email)
+               ->subject('Recuperación de Contraseña\n su nueva contraseña es: $newpass\n\nSaludos equipo técnico')
+               ->send('Atención correo recuperación de contraseña');
 
 
             $this->Flash->success(__('Nueva contraseña ha sido enviada a su correo.'));
 	        return $this->redirect(['action' => 'index']);
-         }
+			}
+			catch(\Exception $ee) {
+			   $this->Flash->success(__('Falló envío de correo.'));
+			}
 
-
-         $this->Flash->success(__('Usuario no encontrado.'));
+		 }
+		 else
+            $this->Flash->success(__('Usuario/correo no encontrado.'));
          
-      }
-	  
-	  
+      }  
    }
 
    public function cambioContrasena() {
