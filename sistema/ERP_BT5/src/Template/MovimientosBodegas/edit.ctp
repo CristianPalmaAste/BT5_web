@@ -3,7 +3,7 @@
 
 
  
-	  <h1>Movimientos de Bodega</h1><br/>
+	  <h1>Consulta Kárdex por Producto</h1><br/>
 
 		 
 	  <table style="border:1px solid white;" border="2" cellspacing="1" cellpadding="1">
