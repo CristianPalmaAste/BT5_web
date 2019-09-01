@@ -338,10 +338,14 @@ if ($gre->idesre!=null) $cond["idesre"] = $gre->idesre;
 	   $conn = ConnectionManager::get('default');
 
 	   $sql = "select * from sub_familias_productos where idfapr=$idfapr order by descripcion";
+	   
+	   //echo $sql."<hr/>";
    
 	   $stmt = $conn->execute($sql);
 
        $results = $stmt ->fetchAll('assoc');
+	   
+	   //print_r($results);
 	   
 		 
 	   if (count($results)==0) {
@@ -358,11 +362,11 @@ if ($gre->idesre!=null) $cond["idesre"] = $gre->idesre;
 	  	   
 	   $l="";
 	   foreach($results as $r) {
-		  if ($l=="") $l .= ";";
+		  if ($l!="") $l .= ";";
 		  
-		  $l=$r["id"]."|".$r["descripcion"];
+		  $l .=$r["id"]."|".$r["descripcion"];
 	   }
-	   
+	   	   
 	   $b->subfam=$l;
 
 	   echo json_encode($b);   
