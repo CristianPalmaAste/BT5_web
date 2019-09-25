@@ -148,7 +148,7 @@ class UsuariosController extends AppController{
         	//Recupero datos persona
 			$idpers=$results[0]["idpers"];
 			$idusua=$results[0]["idusua"];
-			$newpass = $this->randomPassword();
+			$newpass = strtoupper($this->randomPassword());
 			
 		    //echo "idpers: $idpers<br/>";
 			
