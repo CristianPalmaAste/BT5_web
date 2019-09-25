@@ -162,11 +162,11 @@ class UsuariosController extends AppController{
             $email = new Email('default');
             $email->from(['bt5@bt5.cl' => 'BT5'])
                ->to($rr->email)
-               ->subject('Recuperación de Contraseña\n su nueva contraseña es: $newpass\n\nSaludos equipo técnico')
-               ->send('Atención correo recuperación de contraseña');
+               ->subject("Recuperación de Contraseña\n su nueva contraseña es: $newpass\n\nSaludos equipo técnico")
+               ->send("Atención correo recuperación de contraseña");
 
 
-            $this->Flash->success(__('Nueva contraseña ha sido enviada a su correo.'));
+            $this->Flash->success(__("Nueva contraseña ha sido enviada a su correo."));
 	        return $this->redirect(['action' => 'index']);
 			}
 			catch(\Exception $ee) {
