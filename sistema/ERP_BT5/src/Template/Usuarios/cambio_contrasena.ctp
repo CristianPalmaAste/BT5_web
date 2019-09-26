@@ -22,7 +22,7 @@
             ));?>
             <label class="stacked-label"  data-toggle="tooltip" title="Contraseña Actual" for="password"><i class="pe-7f-lock"></i></label>
             <?=$this->form->text('password', array(
-               'class'        => 'stacked-input upper',
+               'class'        => 'stacked-input',
                'id'           => 'password',
                'type'         => 'password',
                'size'         => 12,
@@ -32,7 +32,7 @@
             ));?>
             <label class="stacked-label"  data-toggle="tooltip" title="Nueva Contraseña" for="password2"><i class="pe-7f-lock"></i></label>
             <?=$this->form->text('password2', array(
-               'class'        => 'stacked-input upper',
+               'class'        => 'stacked-input',
                'id'           => 'password2',
                'type'         => 'password',
                'size'         => 12,
@@ -42,7 +42,7 @@
             ));?>
             <label class="stacked-label"  data-toggle="tooltip" title="Repita Nueva Contraseña" for="password3"><i class="pe-7f-lock"></i></label>
             <?=$this->form->text('password3', array(
-               'class'        => 'stacked-input upper',
+               'class'        => 'stacked-input',
                'id'           => 'password3',
                'type'         => 'password',
                'size'         => 12,

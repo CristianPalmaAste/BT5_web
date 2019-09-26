@@ -19,7 +19,7 @@
             ));?>
             <label class="stacked-label" for="password"><i class="pe-7f-lock"></i></label>
             <?=$this->form->text('password', array(
-               'class'        => 'stacked-input upper',
+               'class'        => 'stacked-input',
                'id'           => 'password',
                'type'         => 'password',
                'size'         => 12,
