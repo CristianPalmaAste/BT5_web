@@ -27,7 +27,7 @@ class UsuariosController extends AppController{
          $conn = ConnectionManager::get('default');
 
          $username = strtoupper($usuario->username);
-         $password = strtoupper($usuario->password);
+         $password = $usuario->password;
 
          $stmt = $conn->execute("SELECT f_valida_usuario('$username', '$password') mensaje;");
 
