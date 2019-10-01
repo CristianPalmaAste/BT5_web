@@ -34,7 +34,12 @@
                            <td>Sub Familia:</td>
                            <td><?= $gre->descripcion ?></td>
                         <tr>
-
+						
+						<tr>
+                           <td>Cuenta Contable:</td>
+                           <td><?= $cuentas_contables[$gre->idcuco] ?></td>
+                        <tr>
+												
                   </table>
                </div>
             </div>

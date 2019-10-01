@@ -138,13 +138,16 @@ class SubFamiliasProductosController extends AppController
 
     public function view($id=null) {
        $session = $this->request->session();
+	   $idempr = $session->read("idempr");
+	   $idgrem = $session->read("idgrem");
 
        $gre = $this->SubFamiliasProductos->get($id);
-       $this->llena_lista('familias_productos', 'descripcion');
+       $this->llena_lista('familias_productos', 'descripcion', $idempr);
+	   $this->llena_cuentas($idgrem);
+	   
        $this->set("errors", []); 
 
 	   $this->set('gre', $gre);
-
     }
     
     public function delete($id)

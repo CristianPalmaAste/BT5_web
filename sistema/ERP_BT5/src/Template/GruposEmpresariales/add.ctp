@@ -91,7 +91,7 @@
 	     <label for="username" class="stacked-label data-toggle="tooltip" title="Nombre de Usuario""><i class="pe-7s-user" ></i></label>
          <?=$this->Form->text("username", ["size" => 100, "maxlength" => 100, "class" => "stacked-input upper", "id" => "username", "placeholder" => "Nombre Usuario*", "required" => true]);?>
          <label for="password" class="stacked-label data-toggle="tooltip" title="Contraseña""><i class="pe-7s-lock" ></i></label>
-         <?=$this->Form->text("password", ["size" => 100, "maxlength" => 100, "class" => "stacked-input upper", "id" => "password", "placeholder" => "Contraseña*", "required" => true]);?>
+         <?=$this->Form->text("password", ["size" => 100, "maxlength" => 100, "class" => "stacked-input", "id" => "password", "placeholder" => "Contraseña*", "required" => true]);?>
 
 				 
          <label for="identificador1" class="stacked-label data-toggle="tooltip" title="RUT, sin Dígito Verificador"><i class="pe-mi-id" ></i></label>

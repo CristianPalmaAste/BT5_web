@@ -78,7 +78,7 @@
 			   
 			case "button":
 			   $caption = $this->getProp("caption", $name);
-               $s .= "<input type='button' id='$id' name='$name' value='$caption' class='btn btn-info btn-sm' style='height:30px'/>";
+               $s .= "<input type='button' id='$id' name='$name' value='$caption' class='btn btn-primary' style='height:30px'/>";
                break;	
 			   
 			case "link":
