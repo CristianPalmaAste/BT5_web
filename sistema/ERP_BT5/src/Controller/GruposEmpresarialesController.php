@@ -310,7 +310,7 @@ class GruposEmpresarialesController extends AppController
        $this->set("eciviles", $ecivil->obtEstadosCiviles());
        $this->set("sexos"  , $sexo->obtSexos());
 		
-	   $this->set("rubros"  , $rubros->obtRubros($idgrem));
+	   $this->set("rubros"  , $rubros->obtRubros());
 	   
 	   $this->set("idgrem", $idgrem);
     }

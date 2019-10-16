@@ -51,11 +51,11 @@ class RubrosTable extends Table
        }
     }
 	
-	public function obtRubros($idgrem) {
+	public function obtRubros() {
 	   $l=[];
 	   $l[""]="";
 	   
-	   $r = $this->find('all')->where(["idgrem" => $idgrem])->order('descripcion');
+	   $r = $this->find('all')->order('descripcion');
 	   foreach($r as $s)
 	      $l[$s["id"]] = $s["descripcion"];
 		  
