@@ -25,6 +25,7 @@
 		 $onblur   = $this->getProp("onblur",   "");
 		 
 		 $class    = $this->getProp("class",   "");
+		 $btn      = $this->getProp("btn",   "");
 		 
 		 
 		 
@@ -61,6 +62,9 @@
 			   }
 			  
 			   $s .= "/>";
+			   
+			   if (!$readonly && $btn!="")
+				  $s .= "<button id='$btn' class='btn btn-info' type='button' style='width:10px;'><span class='glyphicon glyphicon-search'></span></button>";
 			   break;
 			
 			case "select": 

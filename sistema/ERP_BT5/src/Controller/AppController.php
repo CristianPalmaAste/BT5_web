@@ -57,10 +57,15 @@ class AppController extends Controller{
       //$this->loadComponent('Csrf');
 
       $session = $this->request->session();
+	  $idgrem = $session->read("idgrem");
+	  $idusua = $session->read("idusua");
+	  
+	  //echo "Usuario: '$idusua'<br/>";
 
       if($session->check("idusua")){
          $this->genMenu();
       }
+
    }
 
    public function translateAccents( $text ){
@@ -74,6 +79,7 @@ class AppController extends Controller{
 
    public function genMenu($idMenuActivo=null){
       $session = $this->request->session();
+	  $idusua = $session->read("idusua");
 
       if ($session->check("idusua"))
          $this->set("connected", true);

@@ -14,11 +14,15 @@ use Cake\Mailer\Email;
 class UsuariosController extends AppController{
    public function initialize(){
       parent::initialize();
+	  
+	  //echo "Estoy en usuarios.index!<hr/>";
    }
 
    public function index(){
       $this->set('title', 'Acceso');
       $this->set("errores", []);
+	  
+	  
 
       $usuario = $this->Usuarios->newEntity();
       if ($this->request->is('post')) {
