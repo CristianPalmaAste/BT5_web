@@ -124,12 +124,31 @@ class AsientosContablesController extends AppController
          $this->request->data["idusuacrearegistro"] = $session->read("idusua");
 
          $this->request->data["fechacrearegistro"] = date('Y-m-d H:i:s');
+		 
+		 $periodo = TableRegistry::get('periodos_contables'); 
+		 
+		 $arr = $periodo->find("all")->where(["idempr"=>$idempr, "idespc"=>1]);
+		 		 		 
+		 foreach($arr as $r)
+		    $gre->idpeco = $r["id"]; 
+		 
+		 //echo "Periodo contable: ".$gre->idpeco."<br/>";
+		 
+		 //return;
 
          $stmt = $conn->execute("SELECT NEXTVAL('asco_seq');");
 
          $results = $stmt ->fetchAll('assoc');
 		 
-		 $stmt = $conn->execute("SELECT max(numero_asiento) maximo from asientos_contables where idgrem=$idgrem");
+		 $sql= "SELECT max(numero_asiento) maximo 
+		        from asientos_contables a,
+                     periodos_contables b 
+                where a.idpeco=$gre->idpeco
+                and   b.idempr=$idempr
+                and   b.anno=2019";
+
+		 
+		 $stmt = $conn->execute($sql);
 
          $results2 = $stmt ->fetchAll('assoc');
 		 
@@ -144,7 +163,6 @@ class AsientosContablesController extends AppController
 		 try {
 			$gre->id =  $results[0]["nextval"];
 			$gre->numero_asiento=$numero_asiento;
-			$gre->idpeco=1; //Periodo contable
 			$gre->idusuacreaasiento=$idusua;
 			$gre->idesac=1;
 			
