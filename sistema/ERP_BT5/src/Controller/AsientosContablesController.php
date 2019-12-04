@@ -408,7 +408,7 @@ class AsientosContablesController extends AppController
 	   
 	   $this->set('gre', $gre);
 	   
-	   echo "fecha_asiento: ".$gre->fecha_asiento."<br/>";
+	   //echo "fecha_asiento: ".$gre->fecha_asiento."<br/>";
 	   $f = explode("/", $gre->fecha_asiento);
 	   
 	   $gre->fecha_asiento = "20".$f[2]."-".$f[0]."-".$f[1];
