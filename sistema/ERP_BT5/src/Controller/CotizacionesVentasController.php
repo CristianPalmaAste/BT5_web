@@ -295,7 +295,22 @@ class CotizacionesVentasController extends AppController
 	
 	function setGrid($rows=array()) {
 	   $grid = new miGrilla($rows);
-	   	   
+	   
+	   $session = $this->request->session();	  
+	   $idgrem=$session->read("idgrem");
+	   $idempr=$session->read("idempr");
+	   
+	   echo "Empresa: ".$idempr."<br/>";
+	   $tabla = TableRegistry::get("Servicios");
+	   
+	   $arr = $tabla->find("all")->where(["idempr" => $idempr])->order("nombre");
+	   
+	   $servicios=[];
+	   $servicios[""] = "Seleccione servicio";
+	   
+	   foreach($arr as $r) 
+	     $servicios[$r["id"]]=$r["nombre"];
+	   
 	   $grid->addCol(["name" => "producto"            , "caption" => "Producto",    "size" => 8,  "onblur" => "ob_producto", "required" => true]);
 	   $grid->addCol(["name" => "idprod"              , "gadget" => "hidden"]);
 	   $grid->addCol(["name" => "estaexento"          , "gadget" => "hidden"]);
@@ -306,6 +321,10 @@ class CotizacionesVentasController extends AppController
 	   
 	   $grid->addCol(["name" => "desproducto2"        , "gadget" => "hidden"]);
 	   $grid->addCol(["name" => "desproducto"         , "caption" => "Descripción", "size" => 30, "readonly" => true, "gadget" => "select", "selvalues" => ["" => "Seleccione producto"] ]);
+	   
+	   $grid->addCol(["name" => "idserv"            , "caption" => "Servicio",    "size" => 8,  "onblur" => "ob_servicio", "required" => true]);
+	   $grid->addCol(["name" => "desservicio"        ,"caption" => "Descripción", "size" => 30, "readonly" => true, "gadget" => "select", "selvalues" => $servicios ]);
+	   
 	   $grid->addCol(["name" => "idunmp"              , "caption" => "U.Med.",      "size" => 5,  "readonly" => true]);
 	   $grid->addCol(["name" => "preciounitario"      , "caption" => "P.Unit.",     "size" => 10, "readonly" => true, "type" => "N"]);
 	   $grid->addCol(["name" => "cantidad"            , "caption" => "Cant",        "size" => 8,  "type" => "N", "onblur" => "ob_cantidad", "required" => true]);

@@ -136,5 +136,9 @@
 	  function validRow() {
 	     {{req_fields}}
 		 
+		 if (typeof extraVal === "function") {
+		    return extraVal();
+		 }
+		 
 	     return true;
 	  }

@@ -634,6 +634,9 @@
      });
    }
    
+   function ob_servicio(servicio) {
+   }
+   
    document.getElementById("desproducto").onchange=function() {
 	  //alert(this.value);
 	  
